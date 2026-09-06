@@ -1,0 +1,508 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "id": "title-02-01",
+   "metadata": {},
+   "source": [
+    "## 1. Import libraries and verify upstream evidence\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "2853588a",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2026-09-02T11:43:51.263068Z",
+     "iopub.status.busy": "2026-09-02T11:43:51.262838Z",
+     "iopub.status.idle": "2026-09-02T11:43:51.533909Z",
+     "shell.execute_reply": "2026-09-02T11:43:51.533023Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "import sys\n",
+    "from pathlib import Path\n",
+    "import hashlib\n",
+    "import json\n",
+    "\n",
+    "import numpy as np\n",
+    "import pandas as pd\n",
+    "\n",
+    "sys.path.insert(0, \"..\")\n",
+    "from common_metrics import require\n",
+    "\n",
+    "DATA_DIR = Path(\"output\")  \n",
+    "\n",
+    "from validation import verify_stage, validate_schedule\n",
+    "for upstream in range(2):\n",
+    "    verify_stage(upstream)\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "title-02-02",
+   "metadata": {},
+   "source": [
+    "## 2. Load the canonical data and notebook 01 evidence\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "95ff4120",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2026-09-02T11:43:51.536520Z",
+     "iopub.status.busy": "2026-09-02T11:43:51.536192Z",
+     "iopub.status.idle": "2026-09-02T11:43:51.556820Z",
+     "shell.execute_reply": "2026-09-02T11:43:51.555660Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "def first_existing(paths):\n",
+    "    for path in paths:\n",
+    "        if Path(path).is_file():\n",
+    "            return Path(path)\n",
+    "    return None\n",
+    "\n",
+    "\n",
+    "canonical_path = first_existing([DATA_DIR / \"canonical_schedule.csv\", \"canonical_schedule.csv\"])\n",
+    "baseline_evidence_path = first_existing([DATA_DIR / \"baseline_evidence.json\", \"baseline_evidence.json\"])\n",
+    "require(canonical_path is not None and baseline_evidence_path is not None,\n",
+    "        \"Run notebooks 00 and 01 first.\")\n",
+    "\n",
+    "canonical_sha256 = hashlib.sha256(canonical_path.read_bytes()).hexdigest()\n",
+    "baseline_evidence_sha256 = hashlib.sha256(baseline_evidence_path.read_bytes()).hexdigest()\n",
+    "baseline_evidence = json.loads(baseline_evidence_path.read_text(encoding=\"utf-8\"))\n",
+    "\n",
+    "\n",
+    "require(baseline_evidence.get(\"canonical_sha256\") == canonical_sha256,\n",
+    "        \"baseline_evidence.json was produced from a different canonical schedule.\")\n",
+    "baseline_values = baseline_evidence[\"derived_values\"]\n",
+    "\n",
+    "schedule = pd.read_csv(canonical_path)\n",
+    "schedule[\"week_start\"] = pd.to_datetime(schedule[\"week_start\"], errors=\"raise\")\n",
+    "schedule[\"week_end\"] = pd.to_datetime(schedule[\"week_end\"], errors=\"raise\")\n",
+    "for column in [\"source_row\", \"nT\", \"rotation_group\", \"rotation_round\"]:\n",
+    "    schedule[column] = pd.to_numeric(schedule[column], errors=\"raise\").astype(int)\n",
+    "\n",
+    "week_fields = [\"week_start\", \"week_end\", \"nT\", \"rotation_group\", \"rotation_round\"]\n",
+    "weeks = schedule[[\"week_id\"] + week_fields].drop_duplicates().sort_values(\"week_start\").reset_index(drop=True)\n",
+    "\n",
+    "pd.set_option(\"display.max_columns\", 30)\n",
+    "pd.set_option(\"display.width\", 150)\n",
+    "print(\"Loaded:\", canonical_path.name, \"/\", baseline_evidence_path.name)\n",
+    "print(\"Assignments / weeks / rotating pharmacies:\", len(schedule), len(weeks), schedule[\"pharmacy_id\"].nunique())\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "title-02-03",
+   "metadata": {},
+   "source": [
+    "## 3. Re-derive and verify against notebook 01\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "c6037ca7",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2026-09-02T11:43:51.561570Z",
+     "iopub.status.busy": "2026-09-02T11:43:51.561141Z",
+     "iopub.status.idle": "2026-09-02T11:43:51.592886Z",
+     "shell.execute_reply": "2026-09-02T11:43:51.591904Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "weekly_total = schedule.groupby(\"week_id\").size().reindex(weeks[\"week_id\"], fill_value=0)\n",
+    "weekly_h24 = schedule.loc[schedule[\"shift_type\"].eq(\"H24\")].groupby(\"week_id\").size().reindex(weeks[\"week_id\"], fill_value=0)\n",
+    "require(weekly_h24.nunique() == 1, \"Historical H24 count is not uniform across weeks.\")\n",
+    "\n",
+    "group_by_nt = weeks.groupby(\"nT\")[\"rotation_group\"].first().astype(int).to_dict()\n",
+    "rotation_groups = sorted(set(group_by_nt.values()))\n",
+    "\n",
+    "group_frequency = schedule.groupby([\"pharmacy_id\", \"rotation_group\"]).size().rename(\"assignments\").reset_index()\n",
+    "primary_group = (\n",
+    "    group_frequency.sort_values([\"pharmacy_id\", \"assignments\", \"rotation_group\"], ascending=[True, False, True])\n",
+    "    .drop_duplicates(\"pharmacy_id\").set_index(\"pharmacy_id\")[\"rotation_group\"].astype(int).to_dict()\n",
+    ")\n",
+    "group_sizes = pd.Series(primary_group, name=\"rotation_group\").value_counts().sort_index().astype(int).to_dict()\n",
+    "\n",
+    "assigned_primary_group = schedule[\"pharmacy_id\"].map(primary_group)\n",
+    "cross_group_mask = assigned_primary_group.ne(schedule[\"rotation_group\"])\n",
+    "cross_group_rows = int(cross_group_mask.sum())\n",
+    "cross_group_events = schedule.loc[cross_group_mask, [\"pharmacy_id\", \"nT\", \"rotation_group\", \"week_id\", \"shift_type\"]].copy()\n",
+    "cross_group_events[\"primary_group\"] = cross_group_events[\"pharmacy_id\"].map(primary_group)\n",
+    "\n",
+    "weekly_staffing_floor = int(weekly_total.min())\n",
+    "weekly_h24_required = int(weekly_h24.iloc[0])\n",
+    "maximum_annual_workload = int(schedule.groupby(\"pharmacy_id\").size().max())\n",
+    "\n",
+    "\n",
+    "\n",
+    "\n",
+    "nt_patterns_by_group = {g: int(sum(mg == g for mg in group_by_nt.values())) for g in rotation_groups}\n",
+    "h24_cycle_bounds_by_group = {}\n",
+    "for group in rotation_groups:\n",
+    "    available_slots = nt_patterns_by_group[group] * weekly_h24_required\n",
+    "    pharmacy_count = group_sizes[group]\n",
+    "    h24_cycle_bounds_by_group[group] = {\n",
+    "        \"minimum\": available_slots // pharmacy_count,\n",
+    "        \"maximum\": -(-available_slots // pharmacy_count),  \n",
+    "        \"available_slots\": available_slots,\n",
+    "        \"pharmacies\": pharmacy_count,\n",
+    "    }\n",
+    "\n",
+    "verification = pd.DataFrame([\n",
+    "    (\"weekly staffing floor\", int(baseline_values[\"weekly_staffing_min\"]) == weekly_staffing_floor),\n",
+    "    (\"uniform weekly H24\", bool(baseline_values[\"weekly_h24_uniform\"]) and int(baseline_values[\"weekly_h24_value\"]) == weekly_h24_required),\n",
+    "    (\"maximum annual workload\", int(baseline_values[\"maximum_annual_workload\"]) == maximum_annual_workload),\n",
+    "    (\"group sizes\", {int(k): v for k, v in baseline_values[\"group_sizes\"].items()} == group_sizes),\n",
+    "    (\"cross-group rows\", int(baseline_values[\"cross_group_rows\"]) == cross_group_rows),\n",
+    "], columns=[\"check\", \"passed\"])\n",
+    "require(verification[\"passed\"].all(), f\"NB01 evidence mismatch: {verification.loc[~verification.passed, 'check'].tolist()}\")\n",
+    "verification[\"status\"] = np.where(verification[\"passed\"], \"PASS\", \"FAIL\")\n",
+    "display(verification[[\"check\", \"status\"]])\n",
+    "print(\"Group sizes:\", group_sizes)\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "title-02-04",
+   "metadata": {},
+   "source": [
+    "## 4. Classify observations and modeling choices\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "ec6bfb90",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2026-09-02T11:43:51.595649Z",
+     "iopub.status.busy": "2026-09-02T11:43:51.595374Z",
+     "iopub.status.idle": "2026-09-02T11:43:51.600163Z",
+     "shell.execute_reply": "2026-09-02T11:43:51.599335Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "PARAMETER_STATUS = {\n",
+    "    \"weekly_staffing_floor\": {\n",
+    "        \"value\": weekly_staffing_floor,\n",
+    "        \"classification\": \"HISTORICAL_PROXY_UNVALIDATED\",\n",
+    "        \"caveat\": \"Historical minimum weekly active-pharmacy count; not a validated coverage standard.\",\n",
+    "    },\n",
+    "    \"maximum_annual_workload\": {\n",
+    "        \"value\": maximum_annual_workload,\n",
+    "        \"classification\": \"HISTORICAL_PROXY_UNVALIDATED\",\n",
+    "        \"caveat\": \"Historical maximum assignments per pharmacy; not a certified fairness ceiling.\",\n",
+    "    },\n",
+    "    \"weekly_h24_required\": {\n",
+    "        \"value\": weekly_h24_required,\n",
+    "        \"classification\": \"OBSERVED_VALUE_PRESERVED_BY_POLICY\",\n",
+    "        \"caveat\": \"Uniform across 53 historical blocks; preserving it is a modeling policy, not external validation.\",\n",
+    "    },\n",
+    "}\n",
+    "for name, info in PARAMETER_STATUS.items():\n",
+    "    print(f\"{name} = {info['value']}  [{info['classification']}]  {info['caveat']}\")\n",
+    "\n",
+    "PARAMETER_STATUS[\"h24_cycle_bounds_by_group\"] = {\n",
+    "    \"value\": h24_cycle_bounds_by_group,\n",
+    "    \"classification\": \"NORMATIVE_EQUAL_COUNT_POLICY\",\n",
+    "    \"caveat\": \"Floor/ceiling of equal H24 slot allocation per 42-pattern cycle; a hard fairness policy, not an observed eligibility fact.\"}\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "title-02-05",
+   "metadata": {},
+   "source": [
+    "## 5. Can rebalancing the 7 groups fix the staffing-floor fragility?\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "170c6c5f",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2026-09-02T11:43:51.602441Z",
+     "iopub.status.busy": "2026-09-02T11:43:51.602213Z",
+     "iopub.status.idle": "2026-09-02T11:43:51.608700Z",
+     "shell.execute_reply": "2026-09-02T11:43:51.607930Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "n_pharmacies = len(primary_group)\n",
+    "n_groups = len(rotation_groups)\n",
+    "max_min_group_size = n_pharmacies // n_groups           \n",
+    "groups_that_can_exceed_it = n_pharmacies % n_groups      \n",
+    "\n",
+    "\n",
+    "\n",
+    "\n",
+    "observed_small_groups = sum(1 for size in group_sizes.values() if size == max_min_group_size)\n",
+    "observed_large_groups = sum(1 for size in group_sizes.values() if size == max_min_group_size + 1)\n",
+    "observed_is_already_max_min_balanced = (\n",
+    "    observed_small_groups == n_groups - groups_that_can_exceed_it\n",
+    "    and observed_large_groups == groups_that_can_exceed_it\n",
+    "    and set(group_sizes.values()) <= {max_min_group_size, max_min_group_size + 1}\n",
+    ")\n",
+    "\n",
+    "print(f\"{n_pharmacies} pharmacies over {n_groups} groups -> best possible minimum group size = {max_min_group_size}\")\n",
+    "print(f\"If all groups have at least {weekly_staffing_floor} members, at most {n_pharmacies - n_groups * weekly_staffing_floor} groups can have a spare member.\")\n",
+    "print(f\"Observed distribution: {group_sizes}\")\n",
+    "print(f\"Observed grouping already max-min-balanced: {observed_is_already_max_min_balanced}\")\n",
+    "\n",
+    "structurally_fragile_groups = [g for g, size in group_sizes.items() if size - 1 < weekly_staffing_floor]\n",
+    "print(f\"Groups with zero single-absence slack under the current floor: {structurally_fragile_groups}\")\n",
+    "\n",
+    "require(\n",
+    "    max_min_group_size <= weekly_staffing_floor,\n",
+    "    \"Unexpected: even the best possible repartition would already clear the floor -- \"\n",
+    "    \"re-check whether rebalancing could help before concluding it can't.\",\n",
+    ")\n",
+    "\n",
+    "if observed_is_already_max_min_balanced and max_min_group_size == weekly_staffing_floor:\n",
+    "    conclusion = (\n",
+    "        f\"PROVEN: no repartition of {n_pharmacies} pharmacies into {n_groups} groups can raise \"\n",
+    "        f\"every group above {weekly_staffing_floor}. If all groups must contain at least \"\n",
+    "        f\"{weekly_staffing_floor} members, the surplus {n_pharmacies - n_groups * weekly_staffing_floor} \"\n",
+    "        f\"can give a spare to at most that many groups, so at least \"\n",
+    "        f\"{n_groups - (n_pharmacies - n_groups * weekly_staffing_floor)} groups have zero slack. \"\n",
+    "        \"The observed grouping attains this bound. Group identities are not mathematically fixed; \"\n",
+    "        \"this does not prove minimum numbers of affected weeks or absence scenarios.\"\n",
+    "    )\n",
+    "else:\n",
+    "    conclusion = (\n",
+    "        \"The observed grouping is NOT max-min-balanced -- rebalancing could reduce (not \"\n",
+    "        \"eliminate) the number of zero-slack groups.\"\n",
+    "    )\n",
+    "print(\"\\n\" + conclusion)\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "title-02-06",
+   "metadata": {},
+   "source": [
+    "## 6. Historical cross-group evidence\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "38ebe86d",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2026-09-02T11:43:51.610877Z",
+     "iopub.status.busy": "2026-09-02T11:43:51.610645Z",
+     "iopub.status.idle": "2026-09-02T11:43:51.622352Z",
+     "shell.execute_reply": "2026-09-02T11:43:51.621389Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "secondary_group_by_pharmacy = {}\n",
+    "for pharmacy_id, rows in cross_group_events.groupby(\"pharmacy_id\"):\n",
+    "    observed_secondary_groups = sorted(rows[\"rotation_group\"].unique().tolist())\n",
+    "    secondary_group_by_pharmacy[pharmacy_id] = {\n",
+    "        \"primary_group\": int(primary_group[pharmacy_id]),\n",
+    "        \"historical_secondary_groups\": [int(g) for g in observed_secondary_groups],\n",
+    "        \"evidence\": [\n",
+    "            {\"week_id\": r.week_id, \"nT\": int(r.nT), \"shift_type\": r.shift_type}\n",
+    "            for r in rows.itertuples()\n",
+    "        ],\n",
+    "    }\n",
+    "\n",
+    "display(cross_group_events)\n",
+    "print(\"Secondary-eligibility candidates:\", list(secondary_group_by_pharmacy))\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "title-02-07",
+   "metadata": {},
+   "source": [
+    "## 7. Build the provenance-rich specification\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "8743b955",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2026-09-02T11:43:51.624834Z",
+     "iopub.status.busy": "2026-09-02T11:43:51.624569Z",
+     "iopub.status.idle": "2026-09-02T11:43:51.639561Z",
+     "shell.execute_reply": "2026-09-02T11:43:51.638689Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "\n",
+    "\n",
+    "\n",
+    "h24_bounds_display = {str(g): f\"{b['minimum']}..{b['maximum']}\" for g, b in h24_cycle_bounds_by_group.items()}\n",
+    "\n",
+    "parameters = pd.DataFrame([\n",
+    "    (\"GROUP_COUNT\", n_groups, \"count(distinct rotation_group)\"),\n",
+    "    (\"WEEKLY_STAFFING_FLOOR\", weekly_staffing_floor, PARAMETER_STATUS[\"weekly_staffing_floor\"][\"classification\"]),\n",
+    "    (\"WEEKLY_H24_REQUIRED\", weekly_h24_required, PARAMETER_STATUS[\"weekly_h24_required\"][\"classification\"]),\n",
+    "    (\"MAXIMUM_ANNUAL_WORKLOAD\", maximum_annual_workload, PARAMETER_STATUS[\"maximum_annual_workload\"][\"classification\"]),\n",
+    "    (\"H24_CYCLE_BOUNDS_BY_GROUP\", json.dumps(h24_bounds_display, sort_keys=True), \"NORMATIVE_EQUAL_COUNT_POLICY: floor/ceiling of H24 cycle slots per group\"),\n",
+    "    (\"CAN_ELIMINATE_ALL_ZERO_SLACK_GROUPS\", n_pharmacies >= n_groups * (weekly_staffing_floor + 1), \"counting bound; does not optimize absence-event counts\"),\n",
+    "], columns=[\"parameter\", \"value\", \"classification\"])\n",
+    "\n",
+    "POLICY_JUSTIFICATIONS = {\n",
+    "    \"staffing_floor\": \"Retain the minimum observed active-pharmacy count to avoid lowering the source calendar's minimum staffing.\",\n",
+    "    \"workload_ceiling\": \"Do not exceed the largest observed pharmacy workload in the same 53-block horizon.\",\n",
+    "    \"weekly_h24\": \"Preserve the uniform H24 count measured in every source block.\",\n",
+    "    \"primary_group_eligibility\": \"Use each pharmacy's dominant observed group to preserve the highly recurrent rotation; the observed exception is retained separately.\",\n",
+    "    \"all_group_members_can_receive_h24_in_model\": \"The supplied file has no capability variable. Treat service type as a reassignable decision within the inferred group; this is a symmetry assumption, not a capability observation.\",\n",
+    "    \"h24_cycle_bounds\": \"Allocate each group's cycle H24 slots as evenly as integer counts permit, without introducing unobserved burden weights.\",\n",
+    "    \"same_nt\": \"Reuse one decision per nT because equal nT patterns repeat exactly in the source.\",\n",
+    "    \"fairness_first\": \"Prioritize total-count disparity, then H24 disparity, then assignment count as the stated ethical objective of this scenario.\",\n",
+    "    \"historical_stability\": \"Break higher-objective ties by minimizing changed calendar active/H24 decisions, preserving observed continuity.\",\n",
+    "    \"absence_experiment\": \"Enumerate one hypothetical absent pharmacy for each eligible pharmacy/nT pair; no absence log or probability is claimed.\",\n",
+    "    \"recovery_policy\": \"Preserve staffing, cycle bounds, ceiling and attained H24 bounds; allow total range to worsen after a disruption so recovery measures feasibility rather than preservation of every optimal objective.\",\n",
+    "    \"cross_group_boundary\": \"Only exact observed cross-group occurrences suggest candidates; no authorization value is invented.\",\n",
+    "}\n",
+    "scenario_policies = {\n",
+    "    \"Efficiency-first\": {\"priorities\":[\"assignments\",\"total_range\",\"h24_range\",\"active_stability\",\"h24_stability\"],\"all_eligible_active\":False},\n",
+    "    \"Fairness-aware\": {\"priorities\":[\"total_range\",\"h24_range\",\"assignments\",\"active_stability\",\"h24_stability\"],\"all_eligible_active\":False},\n",
+    "    \"Full-group\": {\"priorities\":[\"h24_range\",\"h24_stability\"],\"all_eligible_active\":True},\n",
+    "}\n",
+    "model_specification = {\n",
+    "    \"specification_type\": \"data_derived_from_canonical_schedule\",\n",
+    "    \"canonical_file\": canonical_path.name,\n",
+    "    \"canonical_sha256\": canonical_sha256,\n",
+    "    \"baseline_evidence_file\": baseline_evidence_path.name,\n",
+    "    \"baseline_evidence_sha256\": baseline_evidence_sha256,\n",
+    "    \"parameters\": {\n",
+    "        \"horizon_weeks\": int(len(weeks)),\n",
+    "        \"rotation_groups\": [int(g) for g in rotation_groups],\n",
+    "        \"group_count\": n_groups,\n",
+    "        \"weekly_staffing_floor\": weekly_staffing_floor,\n",
+    "        \"weekly_h24_required\": weekly_h24_required,\n",
+    "        \"maximum_annual_workload\": maximum_annual_workload,\n",
+    "        \"h24_cycle_bounds_by_group\": {str(g): b for g, b in h24_cycle_bounds_by_group.items()},\n",
+    "    },\n",
+    "    \"parameter_status\": PARAMETER_STATUS,\n",
+    "    \"derived_maps\": {\n",
+    "        \"group_by_nt\": {str(int(nt)): int(g) for nt, g in group_by_nt.items()},\n",
+    "        \"primary_group_by_pharmacy\": {p: int(g) for p, g in primary_group.items()},\n",
+    "        \"group_sizes\": {str(g): int(s) for g, s in group_sizes.items()},\n",
+    "        \"nt_patterns_by_group\": {str(g): int(c) for g, c in nt_patterns_by_group.items()},\n",
+    "        \"nt_occurrences\": {str(int(nt)): int(c) for nt, c in weeks.groupby(\"nT\").size().items()},\n",
+    "        \"secondary_group_by_pharmacy\": secondary_group_by_pharmacy,\n",
+    "    },\n",
+    "    \"structural_analysis\": {\n",
+    "        \"n_pharmacies\": n_pharmacies,\n",
+    "        \"n_groups\": n_groups,\n",
+    "        \"max_min_group_size_achievable_by_any_repartition\": max_min_group_size,\n",
+    "        \"groups_that_can_exceed_minimum_if_all_groups_meet_floor\": groups_that_can_exceed_it,\n",
+    "        \"all_groups_meet_staffing_floor_assumed\": True,\n",
+    "        \"group_labels_not_fixed_by_proof\": True,\n",
+    "        \"observed_grouping_is_max_min_balanced\": bool(observed_is_already_max_min_balanced),\n",
+    "        \"structurally_fragile_groups\": [int(g) for g in structurally_fragile_groups],\n",
+    "        \"conclusion\": conclusion,\n",
+    "    },\n",
+    "    \"project_scope\": {\n",
+    "        \"empirical_source_count\": 1,\n",
+    "        \"empirical_source\": \"original supplied TURNI CSV only\",\n",
+    "        \"excluded\": [\"geographic coverage\",\"actual availability\",\"demand\",\"preferences\",\"externally supplied legal or contractual rules\"],\n",
+    "        \"absence_scenarios_are_hypothetical\": True,\n",
+    "        \"completion_criterion\": \"correct and reproducible results under the explicitly stated dataset-only model\",\n",
+    "    },\n",
+    "    \"policy_justifications\": POLICY_JUSTIFICATIONS,\n",
+    "    \"scenario_policies\": scenario_policies,\n",
+    "    \"recommendation_order\": [\"total_range\",\"h24_range\",\"assignments\"],\n",
+    "    \"robustness_policy\": {\n",
+    "        \"event_unit\": \"eligible pharmacy-nT pair\",\n",
+    "        \"absence_scope\": \"all calendar occurrences of that nT\",\n",
+    "        \"H24_reoptimization_scope\": \"all patterns in the affected primary group\",\n",
+    "        \"preserve_base_h24_annual_bounds\": True,\n",
+    "        \"preserve_optimized_total_range\": False,\n",
+    "        \"all_cross_group_cases_require_review\": True,\n",
+    "    },\n",
+    "    \"model_policies\": {\n",
+    "        \"same_nt_reuses_one_decision_pattern\": True,\n",
+    "        \"eligibility_uses_each_pharmacy_dominant_observed_group\": True,\n",
+    "        \"secondary_eligibility_limited_to_historical_evidence\": True,\n",
+    "        \"historical_cross_group_rows_beyond_the_whitelist_are_not_generalized\": True,\n",
+    "        \"fairness_ranges_are_optimized_not_manually_bounded\": True,\n",
+    "        \"geographical_coverage_claimed\": False,\n",
+    "    },\n",
+    "    \"parameter_provenance\": parameters.to_dict(orient=\"records\"),\n",
+    "}\n",
+    "display(parameters)\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "title-02-08",
+   "metadata": {},
+   "source": [
+    "## 8. Save\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "55e13842",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2026-09-02T11:43:51.641756Z",
+     "iopub.status.busy": "2026-09-02T11:43:51.641524Z",
+     "iopub.status.idle": "2026-09-02T11:43:51.648822Z",
+     "shell.execute_reply": "2026-09-02T11:43:51.647786Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "Path(DATA_DIR / \"model_specification.json\").write_text(\n",
+    "    json.dumps(model_specification, ensure_ascii=False, indent=2), encoding=\"utf-8\"\n",
+    ")\n",
+    "parameters.to_csv(DATA_DIR / \"parameter_provenance.csv\", index=False)\n",
+    "cross_group_events.to_csv(DATA_DIR / \"secondary_eligibility_evidence.csv\", index=False)\n",
+    "print(\"Saved: output/model_specification.json, parameter_provenance.csv, secondary_eligibility_evidence.csv\")\n",
+    "\n",
+    "policy_table = pd.DataFrame([{\"policy\":k,\"justification\":v} for k,v in POLICY_JUSTIFICATIONS.items()])\n",
+    "policy_table.to_csv(DATA_DIR / \"policy_justifications.csv\",index=False)\n",
+    "from validation import write_stage\n",
+    "write_stage(2, ['output/stage_00_manifest.json', 'output/stage_01_manifest.json'], ['output/model_specification.json', 'output/parameter_provenance.csv', 'output/secondary_eligibility_evidence.csv', 'output/policy_justifications.csv'])\n"
+   ]
+  }
+ ],
+ "metadata": {
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.14.2"
+  },
+  "review_execution": {
+   "method": "IPython in-process; isolated process per notebook",
+   "python": "3.12.13"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}

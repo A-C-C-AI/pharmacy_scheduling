@@ -1,0 +1,13 @@
+policy,justification
+staffing_floor,Retain the minimum observed active-pharmacy count to avoid lowering the source calendar's minimum staffing.
+workload_ceiling,Do not exceed the largest observed pharmacy workload in the same 53-block horizon.
+weekly_h24,Preserve the uniform H24 count measured in every source block.
+primary_group_eligibility,Use each pharmacy's dominant observed group to preserve the highly recurrent rotation; the observed exception is retained separately.
+all_group_members_can_receive_h24_in_model,"The supplied file has no capability variable. Treat service type as a reassignable decision within the inferred group; this is a symmetry assumption, not a capability observation."
+h24_cycle_bounds,"Allocate each group's cycle H24 slots as evenly as integer counts permit, without introducing unobserved burden weights."
+same_nt,Reuse one decision per nT because equal nT patterns repeat exactly in the source.
+fairness_first,"Prioritize total-count disparity, then H24 disparity, then assignment count as the stated ethical objective of this scenario."
+historical_stability,"Break higher-objective ties by minimizing changed calendar active/H24 decisions, preserving observed continuity."
+absence_experiment,Enumerate one hypothetical absent pharmacy for each eligible pharmacy/nT pair; no absence log or probability is claimed.
+recovery_policy,"Preserve staffing, cycle bounds, ceiling and attained H24 bounds; allow total range to worsen after a disruption so recovery measures feasibility rather than preservation of every optimal objective."
+cross_group_boundary,Only exact observed cross-group occurrences suggest candidates; no authorization value is invented.

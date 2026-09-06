@@ -1,0 +1,101 @@
+{
+  "evidence_type": "single_absence_robustness_derived_from_optimized_schedule",
+  "canonical_sha256": "7f3e1ea52a79ecfcb3d6b3ee9ca8bc0dea7d5b5c7f8df9c0f765269576a08b46",
+  "model_specification_sha256": "33c040bd3574b0d8531bcf6894cc2ddd10ab904e618199d89b5ff92ef2c442b1",
+  "optimized_schedule_sha256": "bba249845dee998ece7e1e2f04d01470f41394b805c6e5cf37f4e486b446f0ac",
+  "results": {
+    "tested_pattern_absences": 738,
+    "scheduled_active_absences": 730,
+    "no_change_required": 8,
+    "recoverable_within_group": 424,
+    "historical_candidates_requiring_approval": 17,
+    "historical_candidates_passing_modeled_constraints": 17,
+    "manual_cases_without_candidate": 289,
+    "total_requiring_human_intervention": 306,
+    "H24_reoptimizations_feasible": 126,
+    "H24_reoptimizations_tested": 126
+  },
+  "group_summary": [
+    {
+      "rotation_group": 1,
+      "group_size": 17,
+      "tested_scenarios": 102,
+      "scheduled_active_absences": 102,
+      "recoverable_within_group": 0,
+      "historical_candidates_requiring_approval": 0,
+      "manual_without_candidate": 102,
+      "total_requiring_human_intervention": 102
+    },
+    {
+      "rotation_group": 2,
+      "group_size": 18,
+      "tested_scenarios": 108,
+      "scheduled_active_absences": 104,
+      "recoverable_within_group": 104,
+      "historical_candidates_requiring_approval": 0,
+      "manual_without_candidate": 0,
+      "total_requiring_human_intervention": 0
+    },
+    {
+      "rotation_group": 3,
+      "group_size": 18,
+      "tested_scenarios": 108,
+      "scheduled_active_absences": 104,
+      "recoverable_within_group": 104,
+      "historical_candidates_requiring_approval": 0,
+      "manual_without_candidate": 0,
+      "total_requiring_human_intervention": 0
+    },
+    {
+      "rotation_group": 4,
+      "group_size": 17,
+      "tested_scenarios": 102,
+      "scheduled_active_absences": 102,
+      "recoverable_within_group": 0,
+      "historical_candidates_requiring_approval": 0,
+      "manual_without_candidate": 102,
+      "total_requiring_human_intervention": 102
+    },
+    {
+      "rotation_group": 5,
+      "group_size": 18,
+      "tested_scenarios": 108,
+      "scheduled_active_absences": 108,
+      "recoverable_within_group": 108,
+      "historical_candidates_requiring_approval": 0,
+      "manual_without_candidate": 0,
+      "total_requiring_human_intervention": 0
+    },
+    {
+      "rotation_group": 6,
+      "group_size": 18,
+      "tested_scenarios": 108,
+      "scheduled_active_absences": 108,
+      "recoverable_within_group": 108,
+      "historical_candidates_requiring_approval": 0,
+      "manual_without_candidate": 0,
+      "total_requiring_human_intervention": 0
+    },
+    {
+      "rotation_group": 7,
+      "group_size": 17,
+      "tested_scenarios": 102,
+      "scheduled_active_absences": 102,
+      "recoverable_within_group": 0,
+      "historical_candidates_requiring_approval": 17,
+      "manual_without_candidate": 85,
+      "total_requiring_human_intervention": 102
+    }
+  ],
+  "policies": {
+    "same_group_recovery_preferred": true,
+    "all_cross_group_candidates_require_human_approval": true,
+    "recovery_unit": "pharmacy-nT, affecting every occurrence; H24 changes may span the group cycle",
+    "all_same_group_successes_materialized_and_validated": true,
+    "optimal_total_workload_range_locked_during_recovery": false,
+    "base_H24_annual_min_max_preserved_during_recovery": true,
+    "secondary_eligibility_limited_to_exact_historical_precedent": true,
+    "cross_group_substitution_otherwise_not_inferred": true,
+    "staffing_floor_relaxed_automatically": false
+  }
+}

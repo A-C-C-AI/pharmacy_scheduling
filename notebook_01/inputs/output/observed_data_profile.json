@@ -1,0 +1,26 @@
+{
+  "profile_type": "observed_not_prespecified",
+  "source_file": "TURNI FCIE BO CITTA 2026_verificato(53 SETT dal 36°).csv",
+  "source_sha256": "fb9557d29638f0987bf3c8bbf6726da34b3e077177062ef9b10c8ce83380f799",
+  "assignments": 931,
+  "weeks": 53,
+  "rotating_pharmacies": 123,
+  "locations": 124,
+  "non_rotation_facilities": 2,
+  "group_period_candidate": 7,
+  "group_membership_purity": 0.9989258861439313,
+  "group_period_permutation_p_value": 0.001996007984031936,
+  "group_period_permutations_run": 500,
+  "source_encoding": "cp1252",
+  "candidate_period_min": 2,
+  "candidate_period_max": 41,
+  "permutation_random_seed": 0,
+  "null_best_purity_mean": 0.6654285714285714,
+  "null_best_purity_max": 0.7948442534908701,
+  "group_period_permutation_exceedances": 0,
+  "permutation_null": "exchangeable nT labels across intact patterns; repeated-week membership preserved",
+  "canonical_sha256": "7f3e1ea52a79ecfcb3d6b3ee9ca8bc0dea7d5b5c7f8df9c0f765269576a08b46",
+  "boundary_exceptions": [
+    "2026-W53"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "stage": 2,
+  "inputs": {
+    "output/stage_00_manifest.json": "a7c00fd0dfa9d12a326dcdcb653dbcf59d099b41ade25dfdafd54ed1e06cdbe9",
+    "output/stage_01_manifest.json": "aee2bffdec0e47cccce95e4a9c83ab8a9f4df7472bf5d21b920293b762b84564",
+    "common_metrics.py": "3a4cfc5f26cff32fa77729367c1fc34e89f294f45631a21edd43e34e485c53dd",
+    "reporting.py": "ba350c2f8a4440cadbbb5357e8a5e45278ee2270f08208fa38700ddcd640ec3a",
+    "validation.py": "c2b2c4d193a75acd37d537fa834b2ad96d7c6dca9cee2e13f65cc4a0082db077"
+  },
+  "outputs": {
+    "output/model_specification.json": "33c040bd3574b0d8531bcf6894cc2ddd10ab904e618199d89b5ff92ef2c442b1",
+    "output/parameter_provenance.csv": "44018a6a4cd0d3c36013ff3ae51a2d0f5c86fd3e527220f7e9f5e7c0eca5474f",
+    "output/secondary_eligibility_evidence.csv": "a9cd675d61657a2406896ab131b827cf3aca1b92275a7e6370a20e57f664c1b8",
+    "output/policy_justifications.csv": "1faaf4e01b2e5a4ad87f6e345e64cc4b8b59f6930afd9275f161e8c364c801a4"
+  },
+  "notebook_source_sha256": "b317049d424f57d9acad554b3caf55d852fe8a8fa79b9f37107edf0e20bd7160"
+}

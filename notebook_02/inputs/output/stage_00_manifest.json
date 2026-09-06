@@ -1,0 +1,17 @@
+{
+  "stage": 0,
+  "inputs": {
+    "data/TURNI FCIE BO CITTA 2026_verificato(53 SETT dal 36\u00b0).csv": "fb9557d29638f0987bf3c8bbf6726da34b3e077177062ef9b10c8ce83380f799",
+    "common_metrics.py": "3a4cfc5f26cff32fa77729367c1fc34e89f294f45631a21edd43e34e485c53dd",
+    "reporting.py": "ba350c2f8a4440cadbbb5357e8a5e45278ee2270f08208fa38700ddcd640ec3a",
+    "validation.py": "c2b2c4d193a75acd37d537fa834b2ad96d7c6dca9cee2e13f65cc4a0082db077"
+  },
+  "outputs": {
+    "output/canonical_schedule.csv": "7f3e1ea52a79ecfcb3d6b3ee9ca8bc0dea7d5b5c7f8df9c0f765269576a08b46",
+    "output/pseudonymized_assignments.csv": "579d02779dbd7a80c57e4203398cf9b2f3a618ac4e1258ca336e6c711f887d1e",
+    "output/observed_data_profile.json": "5729d557a3c7bcdaa501a3989073068d75f48985dddf9ddb6a9fc0821c7380d7",
+    "output/mapping_PRIVATE.csv": "4473e7faf54fbc25b1c7ee090df334bab3046a387eb552852e7a4a5fcb5c6834",
+    "output/excluded_non_rotation_PRIVATE.csv": "a7aec474b8eed129d601801c4d78b05f4894d2fe2e1c116f228b514190402e5b"
+  },
+  "notebook_source_sha256": "44ef88f69516dbb1ede3008804999328d2985352bfa4c829a766dc3bfaa85063"
+}

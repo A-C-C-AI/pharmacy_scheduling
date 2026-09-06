@@ -1,0 +1,7 @@
+parameter,value,classification
+GROUP_COUNT,7,count(distinct rotation_group)
+WEEKLY_STAFFING_FLOOR,17,HISTORICAL_PROXY_UNVALIDATED
+WEEKLY_H24_REQUIRED,3,OBSERVED_VALUE_PRESERVED_BY_POLICY
+MAXIMUM_ANNUAL_WORKLOAD,8,HISTORICAL_PROXY_UNVALIDATED
+H24_CYCLE_BOUNDS_BY_GROUP,"{""1"": ""1..2"", ""2"": ""1..1"", ""3"": ""1..1"", ""4"": ""1..2"", ""5"": ""1..1"", ""6"": ""1..1"", ""7"": ""1..2""}",NORMATIVE_EQUAL_COUNT_POLICY: floor/ceiling of H24 cycle slots per group
+CAN_ELIMINATE_ALL_ZERO_SLACK_GROUPS,False,counting bound; does not optimize absence-event counts

@@ -1,0 +1,504 @@
+{
+  "specification_type": "data_derived_from_canonical_schedule",
+  "canonical_file": "canonical_schedule.csv",
+  "canonical_sha256": "7f3e1ea52a79ecfcb3d6b3ee9ca8bc0dea7d5b5c7f8df9c0f765269576a08b46",
+  "baseline_evidence_file": "baseline_evidence.json",
+  "baseline_evidence_sha256": "2e8d2e2c64df09efabb01935d6b1c304ebb0053629dd571c04bfc60727ecf9bb",
+  "parameters": {
+    "horizon_weeks": 53,
+    "rotation_groups": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "group_count": 7,
+    "weekly_staffing_floor": 17,
+    "weekly_h24_required": 3,
+    "maximum_annual_workload": 8,
+    "h24_cycle_bounds_by_group": {
+      "1": {
+        "minimum": 1,
+        "maximum": 2,
+        "available_slots": 18,
+        "pharmacies": 17
+      },
+      "2": {
+        "minimum": 1,
+        "maximum": 1,
+        "available_slots": 18,
+        "pharmacies": 18
+      },
+      "3": {
+        "minimum": 1,
+        "maximum": 1,
+        "available_slots": 18,
+        "pharmacies": 18
+      },
+      "4": {
+        "minimum": 1,
+        "maximum": 2,
+        "available_slots": 18,
+        "pharmacies": 17
+      },
+      "5": {
+        "minimum": 1,
+        "maximum": 1,
+        "available_slots": 18,
+        "pharmacies": 18
+      },
+      "6": {
+        "minimum": 1,
+        "maximum": 1,
+        "available_slots": 18,
+        "pharmacies": 18
+      },
+      "7": {
+        "minimum": 1,
+        "maximum": 2,
+        "available_slots": 18,
+        "pharmacies": 17
+      }
+    }
+  },
+  "parameter_status": {
+    "weekly_staffing_floor": {
+      "value": 17,
+      "classification": "HISTORICAL_PROXY_UNVALIDATED",
+      "caveat": "Historical minimum weekly active-pharmacy count; not a validated coverage standard."
+    },
+    "maximum_annual_workload": {
+      "value": 8,
+      "classification": "HISTORICAL_PROXY_UNVALIDATED",
+      "caveat": "Historical maximum assignments per pharmacy; not a certified fairness ceiling."
+    },
+    "weekly_h24_required": {
+      "value": 3,
+      "classification": "OBSERVED_VALUE_PRESERVED_BY_POLICY",
+      "caveat": "Uniform across 53 historical blocks; preserving it is a modeling policy, not external validation."
+    },
+    "h24_cycle_bounds_by_group": {
+      "value": {
+        "1": {
+          "minimum": 1,
+          "maximum": 2,
+          "available_slots": 18,
+          "pharmacies": 17
+        },
+        "2": {
+          "minimum": 1,
+          "maximum": 1,
+          "available_slots": 18,
+          "pharmacies": 18
+        },
+        "3": {
+          "minimum": 1,
+          "maximum": 1,
+          "available_slots": 18,
+          "pharmacies": 18
+        },
+        "4": {
+          "minimum": 1,
+          "maximum": 2,
+          "available_slots": 18,
+          "pharmacies": 17
+        },
+        "5": {
+          "minimum": 1,
+          "maximum": 1,
+          "available_slots": 18,
+          "pharmacies": 18
+        },
+        "6": {
+          "minimum": 1,
+          "maximum": 1,
+          "available_slots": 18,
+          "pharmacies": 18
+        },
+        "7": {
+          "minimum": 1,
+          "maximum": 2,
+          "available_slots": 18,
+          "pharmacies": 17
+        }
+      },
+      "classification": "NORMATIVE_EQUAL_COUNT_POLICY",
+      "caveat": "Floor/ceiling of equal H24 slot allocation per 42-pattern cycle; a hard fairness policy, not an observed eligibility fact."
+    }
+  },
+  "derived_maps": {
+    "group_by_nt": {
+      "1": 1,
+      "2": 2,
+      "3": 3,
+      "4": 4,
+      "5": 5,
+      "6": 6,
+      "7": 7,
+      "8": 1,
+      "9": 2,
+      "10": 3,
+      "11": 4,
+      "12": 5,
+      "13": 6,
+      "14": 7,
+      "15": 1,
+      "16": 2,
+      "17": 3,
+      "18": 4,
+      "19": 5,
+      "20": 6,
+      "21": 7,
+      "22": 1,
+      "23": 2,
+      "24": 3,
+      "25": 4,
+      "26": 5,
+      "27": 6,
+      "28": 7,
+      "29": 1,
+      "30": 2,
+      "31": 3,
+      "32": 4,
+      "33": 5,
+      "34": 6,
+      "35": 7,
+      "36": 1,
+      "37": 2,
+      "38": 3,
+      "39": 4,
+      "40": 5,
+      "41": 6,
+      "42": 7
+    },
+    "primary_group_by_pharmacy": {
+      "P0001": 1,
+      "P0002": 1,
+      "P0003": 1,
+      "P0004": 1,
+      "P0005": 1,
+      "P0006": 1,
+      "P0007": 1,
+      "P0008": 1,
+      "P0009": 1,
+      "P0010": 1,
+      "P0011": 1,
+      "P0012": 1,
+      "P0013": 1,
+      "P0014": 1,
+      "P0015": 1,
+      "P0016": 1,
+      "P0017": 1,
+      "P0018": 2,
+      "P0019": 2,
+      "P0020": 2,
+      "P0021": 2,
+      "P0022": 2,
+      "P0023": 2,
+      "P0024": 2,
+      "P0025": 2,
+      "P0026": 2,
+      "P0027": 2,
+      "P0028": 2,
+      "P0029": 2,
+      "P0030": 2,
+      "P0031": 2,
+      "P0032": 2,
+      "P0033": 2,
+      "P0034": 2,
+      "P0035": 2,
+      "P0036": 3,
+      "P0037": 3,
+      "P0038": 3,
+      "P0039": 3,
+      "P0040": 3,
+      "P0041": 3,
+      "P0042": 3,
+      "P0043": 3,
+      "P0044": 3,
+      "P0045": 3,
+      "P0046": 3,
+      "P0047": 3,
+      "P0048": 3,
+      "P0049": 3,
+      "P0050": 3,
+      "P0051": 3,
+      "P0052": 3,
+      "P0053": 3,
+      "P0054": 4,
+      "P0055": 4,
+      "P0056": 4,
+      "P0057": 4,
+      "P0058": 4,
+      "P0059": 4,
+      "P0060": 4,
+      "P0061": 4,
+      "P0062": 4,
+      "P0063": 4,
+      "P0064": 4,
+      "P0065": 4,
+      "P0066": 4,
+      "P0067": 4,
+      "P0068": 4,
+      "P0069": 4,
+      "P0070": 4,
+      "P0071": 5,
+      "P0072": 5,
+      "P0073": 5,
+      "P0074": 5,
+      "P0075": 5,
+      "P0076": 5,
+      "P0077": 5,
+      "P0078": 5,
+      "P0079": 5,
+      "P0080": 5,
+      "P0081": 5,
+      "P0082": 5,
+      "P0083": 5,
+      "P0084": 5,
+      "P0085": 5,
+      "P0086": 5,
+      "P0087": 5,
+      "P0088": 5,
+      "P0089": 6,
+      "P0090": 6,
+      "P0091": 6,
+      "P0092": 6,
+      "P0093": 6,
+      "P0094": 6,
+      "P0095": 6,
+      "P0096": 6,
+      "P0097": 6,
+      "P0098": 6,
+      "P0099": 6,
+      "P0100": 6,
+      "P0101": 6,
+      "P0102": 6,
+      "P0103": 6,
+      "P0104": 6,
+      "P0105": 6,
+      "P0106": 6,
+      "P0107": 7,
+      "P0108": 7,
+      "P0109": 7,
+      "P0110": 7,
+      "P0111": 7,
+      "P0112": 7,
+      "P0113": 7,
+      "P0114": 7,
+      "P0115": 7,
+      "P0116": 7,
+      "P0117": 7,
+      "P0118": 7,
+      "P0119": 7,
+      "P0120": 7,
+      "P0121": 7,
+      "P0122": 7,
+      "P0123": 7
+    },
+    "group_sizes": {
+      "1": 17,
+      "2": 18,
+      "3": 18,
+      "4": 17,
+      "5": 18,
+      "6": 18,
+      "7": 17
+    },
+    "nt_patterns_by_group": {
+      "1": 6,
+      "2": 6,
+      "3": 6,
+      "4": 6,
+      "5": 6,
+      "6": 6,
+      "7": 6
+    },
+    "nt_occurrences": {
+      "1": 2,
+      "2": 2,
+      "3": 2,
+      "4": 2,
+      "5": 1,
+      "6": 1,
+      "7": 1,
+      "8": 1,
+      "9": 1,
+      "10": 1,
+      "11": 1,
+      "12": 1,
+      "13": 1,
+      "14": 1,
+      "15": 1,
+      "16": 1,
+      "17": 1,
+      "18": 1,
+      "19": 1,
+      "20": 1,
+      "21": 1,
+      "22": 1,
+      "23": 1,
+      "24": 1,
+      "25": 1,
+      "26": 1,
+      "27": 1,
+      "28": 1,
+      "29": 1,
+      "30": 1,
+      "31": 1,
+      "32": 1,
+      "33": 1,
+      "34": 1,
+      "35": 1,
+      "36": 2,
+      "37": 2,
+      "38": 2,
+      "39": 2,
+      "40": 2,
+      "41": 2,
+      "42": 2
+    },
+    "secondary_group_by_pharmacy": {
+      "P0076": {
+        "primary_group": 5,
+        "historical_secondary_groups": [
+          7
+        ],
+        "evidence": [
+          {
+            "week_id": "2026-W28",
+            "nT": 21,
+            "shift_type": "H24"
+          }
+        ]
+      }
+    }
+  },
+  "structural_analysis": {
+    "n_pharmacies": 123,
+    "n_groups": 7,
+    "max_min_group_size_achievable_by_any_repartition": 17,
+    "groups_that_can_exceed_minimum_if_all_groups_meet_floor": 4,
+    "all_groups_meet_staffing_floor_assumed": true,
+    "group_labels_not_fixed_by_proof": true,
+    "observed_grouping_is_max_min_balanced": true,
+    "structurally_fragile_groups": [
+      1,
+      4,
+      7
+    ],
+    "conclusion": "PROVEN: no repartition of 123 pharmacies into 7 groups can raise every group above 17. If all groups must contain at least 17 members, the surplus 4 can give a spare to at most that many groups, so at least 3 groups have zero slack. The observed grouping attains this bound. Group identities are not mathematically fixed; this does not prove minimum numbers of affected weeks or absence scenarios."
+  },
+  "project_scope": {
+    "empirical_source_count": 1,
+    "empirical_source": "original supplied TURNI CSV only",
+    "excluded": [
+      "geographic coverage",
+      "actual availability",
+      "demand",
+      "preferences",
+      "externally supplied legal or contractual rules"
+    ],
+    "absence_scenarios_are_hypothetical": true,
+    "completion_criterion": "correct and reproducible results under the explicitly stated dataset-only model"
+  },
+  "policy_justifications": {
+    "staffing_floor": "Retain the minimum observed active-pharmacy count to avoid lowering the source calendar's minimum staffing.",
+    "workload_ceiling": "Do not exceed the largest observed pharmacy workload in the same 53-block horizon.",
+    "weekly_h24": "Preserve the uniform H24 count measured in every source block.",
+    "primary_group_eligibility": "Use each pharmacy's dominant observed group to preserve the highly recurrent rotation; the observed exception is retained separately.",
+    "all_group_members_can_receive_h24_in_model": "The supplied file has no capability variable. Treat service type as a reassignable decision within the inferred group; this is a symmetry assumption, not a capability observation.",
+    "h24_cycle_bounds": "Allocate each group's cycle H24 slots as evenly as integer counts permit, without introducing unobserved burden weights.",
+    "same_nt": "Reuse one decision per nT because equal nT patterns repeat exactly in the source.",
+    "fairness_first": "Prioritize total-count disparity, then H24 disparity, then assignment count as the stated ethical objective of this scenario.",
+    "historical_stability": "Break higher-objective ties by minimizing changed calendar active/H24 decisions, preserving observed continuity.",
+    "absence_experiment": "Enumerate one hypothetical absent pharmacy for each eligible pharmacy/nT pair; no absence log or probability is claimed.",
+    "recovery_policy": "Preserve staffing, cycle bounds, ceiling and attained H24 bounds; allow total range to worsen after a disruption so recovery measures feasibility rather than preservation of every optimal objective.",
+    "cross_group_boundary": "Only exact observed cross-group occurrences suggest candidates; no authorization value is invented."
+  },
+  "scenario_policies": {
+    "Efficiency-first": {
+      "priorities": [
+        "assignments",
+        "total_range",
+        "h24_range",
+        "active_stability",
+        "h24_stability"
+      ],
+      "all_eligible_active": false
+    },
+    "Fairness-aware": {
+      "priorities": [
+        "total_range",
+        "h24_range",
+        "assignments",
+        "active_stability",
+        "h24_stability"
+      ],
+      "all_eligible_active": false
+    },
+    "Full-group": {
+      "priorities": [
+        "h24_range",
+        "h24_stability"
+      ],
+      "all_eligible_active": true
+    }
+  },
+  "recommendation_order": [
+    "total_range",
+    "h24_range",
+    "assignments"
+  ],
+  "robustness_policy": {
+    "event_unit": "eligible pharmacy-nT pair",
+    "absence_scope": "all calendar occurrences of that nT",
+    "H24_reoptimization_scope": "all patterns in the affected primary group",
+    "preserve_base_h24_annual_bounds": true,
+    "preserve_optimized_total_range": false,
+    "all_cross_group_cases_require_review": true
+  },
+  "model_policies": {
+    "same_nt_reuses_one_decision_pattern": true,
+    "eligibility_uses_each_pharmacy_dominant_observed_group": true,
+    "secondary_eligibility_limited_to_historical_evidence": true,
+    "historical_cross_group_rows_beyond_the_whitelist_are_not_generalized": true,
+    "fairness_ranges_are_optimized_not_manually_bounded": true,
+    "geographical_coverage_claimed": false
+  },
+  "parameter_provenance": [
+    {
+      "parameter": "GROUP_COUNT",
+      "value": 7,
+      "classification": "count(distinct rotation_group)"
+    },
+    {
+      "parameter": "WEEKLY_STAFFING_FLOOR",
+      "value": 17,
+      "classification": "HISTORICAL_PROXY_UNVALIDATED"
+    },
+    {
+      "parameter": "WEEKLY_H24_REQUIRED",
+      "value": 3,
+      "classification": "OBSERVED_VALUE_PRESERVED_BY_POLICY"
+    },
+    {
+      "parameter": "MAXIMUM_ANNUAL_WORKLOAD",
+      "value": 8,
+      "classification": "HISTORICAL_PROXY_UNVALIDATED"
+    },
+    {
+      "parameter": "H24_CYCLE_BOUNDS_BY_GROUP",
+      "value": "{\"1\": \"1..2\", \"2\": \"1..1\", \"3\": \"1..1\", \"4\": \"1..2\", \"5\": \"1..1\", \"6\": \"1..1\", \"7\": \"1..2\"}",
+      "classification": "NORMATIVE_EQUAL_COUNT_POLICY: floor/ceiling of H24 cycle slots per group"
+    },
+    {
+      "parameter": "CAN_ELIMINATE_ALL_ZERO_SLACK_GROUPS",
+      "value": false,
+      "classification": "counting bound; does not optimize absence-event counts"
+    }
+  ]
+}

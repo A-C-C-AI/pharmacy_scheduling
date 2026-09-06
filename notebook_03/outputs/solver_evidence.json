@@ -1,0 +1,86 @@
+[
+  {
+    "label": "Efficiency-first: assignments",
+    "status": 0,
+    "objective": 901.0,
+    "dual_bound": 901.0,
+    "mip_gap": 0.0
+  },
+  {
+    "label": "Efficiency-first: total_range",
+    "status": 0,
+    "objective": 3.0,
+    "dual_bound": 3.0,
+    "mip_gap": 0.0
+  },
+  {
+    "label": "Efficiency-first: h24_range",
+    "status": 0,
+    "objective": 1.0,
+    "dual_bound": 1.0,
+    "mip_gap": 0.0
+  },
+  {
+    "label": "Efficiency-first: active_stability",
+    "status": 0,
+    "objective": -899.0,
+    "dual_bound": -899.0,
+    "mip_gap": 0.0
+  },
+  {
+    "label": "Efficiency-first: h24_stability",
+    "status": 0,
+    "objective": -153.0,
+    "dual_bound": -153.0,
+    "mip_gap": 0.0
+  },
+  {
+    "label": "Fairness-aware: total_range",
+    "status": 0,
+    "objective": 1.0,
+    "dual_bound": 1.0,
+    "mip_gap": 0.0
+  },
+  {
+    "label": "Fairness-aware: h24_range",
+    "status": 0,
+    "objective": 1.0,
+    "dual_bound": 1.0,
+    "mip_gap": 0.0
+  },
+  {
+    "label": "Fairness-aware: assignments",
+    "status": 0,
+    "objective": 923.0,
+    "dual_bound": 923.0,
+    "mip_gap": 0.0
+  },
+  {
+    "label": "Fairness-aware: active_stability",
+    "status": 0,
+    "objective": -921.0,
+    "dual_bound": -921.0,
+    "mip_gap": 0.0
+  },
+  {
+    "label": "Fairness-aware: h24_stability",
+    "status": 0,
+    "objective": -153.0,
+    "dual_bound": -153.0,
+    "mip_gap": 0.0
+  },
+  {
+    "label": "Full-group: h24_range",
+    "status": 0,
+    "objective": 1.0,
+    "dual_bound": 1.0,
+    "mip_gap": 0.0
+  },
+  {
+    "label": "Full-group: h24_stability",
+    "status": 0,
+    "objective": -153.0,
+    "dual_bound": -153.0,
+    "mip_gap": 0.0
+  }
+]

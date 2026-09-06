@@ -1,0 +1,21 @@
+{
+  "stage": 4,
+  "inputs": {
+    "output/stage_00_manifest.json": "a7c00fd0dfa9d12a326dcdcb653dbcf59d099b41ade25dfdafd54ed1e06cdbe9",
+    "output/stage_01_manifest.json": "aee2bffdec0e47cccce95e4a9c83ab8a9f4df7472bf5d21b920293b762b84564",
+    "output/stage_02_manifest.json": "342f80316c1f3ef60ef4e0faf1b28fa3ec3e32027ad0682e5e338f1696d969f9",
+    "output/stage_03_manifest.json": "66b857ae2b4a8b1ccb65318676f14d4c2e90c863df42bc748ab3fd5739bea139",
+    "common_metrics.py": "3a4cfc5f26cff32fa77729367c1fc34e89f294f45631a21edd43e34e485c53dd",
+    "reporting.py": "ba350c2f8a4440cadbbb5357e8a5e45278ee2270f08208fa38700ddcd640ec3a",
+    "validation.py": "c2b2c4d193a75acd37d537fa834b2ad96d7c6dca9cee2e13f65cc4a0082db077"
+  },
+  "outputs": {
+    "output/single_absence_response_plan.csv": "4353a6edf9aafedc6c58bb9d89bf0e65cd4b5d767e7b171a6b292d6d496e20d3",
+    "output/robustness_summary.csv": "1edb07da8219b85b65102b1e4426d4832642bb3aae275f88a1e6d8875322d4aa",
+    "output/authorized_substitutions_template.csv": "e91c7819c15709bee81ef12840464b540da88daece905ef03c4296a87bd25778",
+    "output/secondary_eligibility_candidates.csv": "faf19963c8f78b47940500607edc7aaa1ab8e49dd48509d2c5c7e908f0ed526f",
+    "output/robustness_evidence.json": "ab2a664f0863fbf5b2d409fd530156575d68e882134292382473ba6f43562e0e",
+    "output/recovery_pattern_plans.json": "151aeb3feee6a1081296663e6764dc364a99ed836081554dbcc679454674dcd7"
+  },
+  "notebook_source_sha256": "a5697f1f11770440067972b4db682a47cc5660555bfb776d9965ae8679c66470"
+}

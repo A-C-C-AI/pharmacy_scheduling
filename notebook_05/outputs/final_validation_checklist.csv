@@ -1,0 +1,10 @@
+project_component,evidence,status
+Data and implementation lineage,Stage manifests and explicit canonical/specification/optimized/robustness links verified,PASS
+All scenario schedules,All exported schedule constraints and summary metrics checked,PASS
+Pattern-level recovery,Every reported same-group success and historical candidate materialized and checked,PASS
+Cross-group boundary,306 simulated cases need a cross-group decision; no approval records are invented,DOCUMENTED MODEL OUTCOME
+Group bound,"PROVEN: no repartition of 123 pharmacies into 7 groups can raise every group above 17. If all groups must contain at least 17 members, the surplus 4 can give a spare to at most that many groups, so at least 3 groups have zero slack. The observed grouping attains this bound. Group identities are not mathematically fixed; this does not prove minimum numbers of affected weeks or absence scenarios.",PROVEN UNDER STATED ASSUMPTIONS
+Staffing and workload thresholds,Derived from source minima/maxima and retained by explicit continuity policy,JUSTIFIED MODEL CHOICE
+Calendar boundary,"Final block ends 2027-01-03, six elapsed days after Monday start; source preserved and limitation documented",CAVEAT
+Dataset-only scope,"No geography, actual availability, demand, preferences or external rules added; excluded by project scope",SCOPE SATISFIED
+Recovery scope,"Pattern-level, one absence at a time; H24 moves may affect other patterns, total fairness is not locked",CAVEAT

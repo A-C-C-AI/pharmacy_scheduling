@@ -1,0 +1,12 @@
+nT,historical_count,optimized_count,active_set_changed,h24_set_changed,added,removed,h24_added,h24_removed
+9,18,17,True,False,[],"[""P0021""]",[],[]
+10,18,17,True,False,[],"[""P0049""]",[],[]
+16,18,17,True,False,[],"[""P0020""]",[],[]
+17,18,17,True,False,[],"[""P0045""]",[],[]
+21,17,17,True,True,"[""P0111""]","[""P0076""]","[""P0111""]","[""P0076""]"
+22,17,17,False,True,[],[],"[""P0009""]","[""P0003""]"
+23,18,17,True,False,[],"[""P0029""]",[],[]
+24,18,17,True,False,[],"[""P0039""]",[],[]
+25,17,17,False,True,[],[],"[""P0057""]","[""P0067""]"
+30,18,17,True,False,[],"[""P0034""]",[],[]
+31,18,17,True,False,[],"[""P0037""]",[],[]

@@ -1,0 +1,10 @@
+property,evidence,classification
+Calendar weeks,53,OBSERVED
+Maximum historical assignments,8,"OBSERVED (single-year sample, see section 5)"
+Uniform rotating H24 per week,3,OBSERVED
+Same schedule for equal nT,11/11,OBSERVED
+Rotation groups,7,OBSERVED
+P/C changes,0,OBSERVED DATA CONSISTENCY
+Weekly rotating staff,17..18,OBSERVED STAFFING; NOT GEOGRAPHIC COVERAGE
+Historical cross-group rows,1,OBSERVED EXCEPTION -> secondary-eligibility candidates in NB02
+Geographic coverage,not evaluated,OUT OF SCOPE

@@ -1,0 +1,21 @@
+{
+  "stage": 5,
+  "inputs": {
+    "output/stage_00_manifest.json": "a7c00fd0dfa9d12a326dcdcb653dbcf59d099b41ade25dfdafd54ed1e06cdbe9",
+    "output/stage_01_manifest.json": "aee2bffdec0e47cccce95e4a9c83ab8a9f4df7472bf5d21b920293b762b84564",
+    "output/stage_02_manifest.json": "342f80316c1f3ef60ef4e0faf1b28fa3ec3e32027ad0682e5e338f1696d969f9",
+    "output/stage_03_manifest.json": "66b857ae2b4a8b1ccb65318676f14d4c2e90c863df42bc748ab3fd5739bea139",
+    "output/stage_04_manifest.json": "2a0517e947100ad63e5116b58de114ec300b561a6f7eede875b960da4dbd4445",
+    "common_metrics.py": "3a4cfc5f26cff32fa77729367c1fc34e89f294f45631a21edd43e34e485c53dd",
+    "reporting.py": "ba350c2f8a4440cadbbb5357e8a5e45278ee2270f08208fa38700ddcd640ec3a",
+    "validation.py": "c2b2c4d193a75acd37d537fa834b2ad96d7c6dca9cee2e13f65cc4a0082db077"
+  },
+  "outputs": {
+    "output/final_project_report.md": "7d7602efec06c64524eae556cefdfd8be2b51af051b14cd0c29627969e662cc6",
+    "output/nt_change_explanation.csv": "981bf46ac89fd64b892758a2de02db0eab8669531513efffed5e55998a429dd8",
+    "output/scenario_pareto_comparison.csv": "d05ef803bd436705860eddf3babd9815b4ee2fa034dba80cf73379aef2eb541a",
+    "output/final_validation_checklist.csv": "f19699e249a0914a9d4328ba3094d8e7c45f7919e9f322845a7c43cb0923ce29",
+    "output/final_project_evidence.json": "64a0285d4cff021c4642a96c0a303b430693bf10196b0e4775023e971662fb79"
+  },
+  "notebook_source_sha256": "062c5f948c980faf32436ecbb59c33c61b7cc6b1cf762e00ec1aaf52abc6836b"
+}

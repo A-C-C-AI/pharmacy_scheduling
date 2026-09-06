@@ -1,0 +1,739 @@
+event_id,nT,rotation_group,unavailable_pharmacy_id,group_size,affected_week_count,was_scheduled_active,was_scheduled_H24,same_group_active_replacement_id,staffing_feasible_after_response,H24_reoptimization_feasible,H24_changed_pattern_assignments,H24_change_details,hard_constraints_recoverable_within_group,cross_group_authorization_required,secondary_eligible_candidate_from_history,candidate_modeled_constraints_pass,candidate_validation_reason,same_group_validation_failure,response_status
+1:P0001,1,1,P0001,17,2,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+1:P0002,1,1,P0002,17,2,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+1:P0003,1,1,P0003,17,2,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+1:P0004,1,1,P0004,17,2,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+1:P0005,1,1,P0005,17,2,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+1:P0006,1,1,P0006,17,2,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+1:P0007,1,1,P0007,17,2,True,True,,False,True,4,REMOVE:P0007@nT=1; ADD:P0011@nT=1; ADD:P0007@nT=15; REMOVE:P0011@nT=15,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+1:P0008,1,1,P0008,17,2,True,True,,False,True,4,ADD:P0006@nT=1; REMOVE:P0008@nT=1; REMOVE:P0006@nT=8; ADD:P0008@nT=8,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+1:P0009,1,1,P0009,17,2,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+1:P0010,1,1,P0010,17,2,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+1:P0011,1,1,P0011,17,2,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+1:P0012,1,1,P0012,17,2,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+1:P0013,1,1,P0013,17,2,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+1:P0014,1,1,P0014,17,2,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+1:P0015,1,1,P0015,17,2,True,True,,False,True,4,ADD:P0006@nT=1; REMOVE:P0015@nT=1; REMOVE:P0006@nT=8; ADD:P0015@nT=8,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+1:P0016,1,1,P0016,17,2,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+1:P0017,1,1,P0017,17,2,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+2:P0018,2,2,P0018,18,2,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+2:P0019,2,2,P0019,18,2,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+2:P0020,2,2,P0020,18,2,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+2:P0021,2,2,P0021,18,2,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+2:P0022,2,2,P0022,18,2,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+2:P0023,2,2,P0023,18,2,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+2:P0024,2,2,P0024,18,2,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+2:P0025,2,2,P0025,18,2,True,True,,True,True,4,REMOVE:P0025@nT=2; ADD:P0028@nT=2; ADD:P0025@nT=30; REMOVE:P0028@nT=30,True,False,,False,,,H24_REOPTIMIZATION_WITHIN_GROUP
+2:P0026,2,2,P0026,18,2,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+2:P0027,2,2,P0027,18,2,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+2:P0028,2,2,P0028,18,2,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+2:P0029,2,2,P0029,18,2,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+2:P0030,2,2,P0030,18,2,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+2:P0031,2,2,P0031,18,2,True,True,,True,True,4,ADD:P0027@nT=2; REMOVE:P0031@nT=2; REMOVE:P0027@nT=16; ADD:P0031@nT=16,True,False,,False,,,H24_REOPTIMIZATION_WITHIN_GROUP
+2:P0032,2,2,P0032,18,2,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+2:P0033,2,2,P0033,18,2,True,True,,True,True,4,ADD:P0021@nT=2; REMOVE:P0033@nT=2; REMOVE:P0021@nT=23; ADD:P0033@nT=23,True,False,,False,,,H24_REOPTIMIZATION_WITHIN_GROUP
+2:P0034,2,2,P0034,18,2,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+2:P0035,2,2,P0035,18,2,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+3:P0036,3,3,P0036,18,2,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+3:P0037,3,3,P0037,18,2,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+3:P0038,3,3,P0038,18,2,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+3:P0039,3,3,P0039,18,2,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+3:P0040,3,3,P0040,18,2,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+3:P0041,3,3,P0041,18,2,True,True,,True,True,4,REMOVE:P0041@nT=3; ADD:P0046@nT=3; ADD:P0041@nT=17; REMOVE:P0046@nT=17,True,False,,False,,,H24_REOPTIMIZATION_WITHIN_GROUP
+3:P0042,3,3,P0042,18,2,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+3:P0043,3,3,P0043,18,2,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+3:P0044,3,3,P0044,18,2,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+3:P0045,3,3,P0045,18,2,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+3:P0046,3,3,P0046,18,2,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+3:P0047,3,3,P0047,18,2,True,True,,True,True,4,REMOVE:P0047@nT=3; ADD:P0048@nT=3; ADD:P0047@nT=24; REMOVE:P0048@nT=24,True,False,,False,,,H24_REOPTIMIZATION_WITHIN_GROUP
+3:P0048,3,3,P0048,18,2,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+3:P0049,3,3,P0049,18,2,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+3:P0050,3,3,P0050,18,2,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+3:P0051,3,3,P0051,18,2,True,True,,True,True,4,ADD:P0048@nT=3; REMOVE:P0051@nT=3; REMOVE:P0048@nT=24; ADD:P0051@nT=24,True,False,,False,,,H24_REOPTIMIZATION_WITHIN_GROUP
+3:P0052,3,3,P0052,18,2,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+3:P0053,3,3,P0053,18,2,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+4:P0054,4,4,P0054,17,2,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+4:P0055,4,4,P0055,17,2,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+4:P0056,4,4,P0056,17,2,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+4:P0057,4,4,P0057,17,2,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+4:P0058,4,4,P0058,17,2,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+4:P0059,4,4,P0059,17,2,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+4:P0060,4,4,P0060,17,2,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+4:P0061,4,4,P0061,17,2,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+4:P0062,4,4,P0062,17,2,True,True,,False,True,4,REMOVE:P0062@nT=4; ADD:P0068@nT=4; ADD:P0062@nT=11; REMOVE:P0068@nT=11,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+4:P0063,4,4,P0063,17,2,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+4:P0064,4,4,P0064,17,2,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+4:P0065,4,4,P0065,17,2,True,True,,False,True,4,ADD:P0063@nT=4; REMOVE:P0065@nT=4; REMOVE:P0063@nT=18; ADD:P0065@nT=18,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+4:P0066,4,4,P0066,17,2,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+4:P0067,4,4,P0067,17,2,True,True,,False,True,4,ADD:P0058@nT=4; REMOVE:P0067@nT=4; REMOVE:P0058@nT=18; ADD:P0067@nT=18,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+4:P0068,4,4,P0068,17,2,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+4:P0069,4,4,P0069,17,2,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+4:P0070,4,4,P0070,17,2,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+5:P0071,5,5,P0071,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+5:P0072,5,5,P0072,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+5:P0073,5,5,P0073,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+5:P0074,5,5,P0074,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+5:P0075,5,5,P0075,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+5:P0076,5,5,P0076,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+5:P0077,5,5,P0077,18,1,True,True,,True,True,4,ADD:P0072@nT=5; REMOVE:P0077@nT=5; REMOVE:P0072@nT=40; ADD:P0077@nT=40,True,False,,False,,,H24_REOPTIMIZATION_WITHIN_GROUP
+5:P0078,5,5,P0078,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+5:P0079,5,5,P0079,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+5:P0080,5,5,P0080,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+5:P0081,5,5,P0081,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+5:P0082,5,5,P0082,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+5:P0083,5,5,P0083,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+5:P0084,5,5,P0084,18,1,True,True,,True,True,4,ADD:P0072@nT=5; REMOVE:P0084@nT=5; REMOVE:P0072@nT=40; ADD:P0084@nT=40,True,False,,False,,,H24_REOPTIMIZATION_WITHIN_GROUP
+5:P0085,5,5,P0085,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+5:P0086,5,5,P0086,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+5:P0087,5,5,P0087,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+5:P0088,5,5,P0088,18,1,True,True,,True,True,4,ADD:P0087@nT=5; REMOVE:P0088@nT=5; REMOVE:P0087@nT=19; ADD:P0088@nT=19,True,False,,False,,,H24_REOPTIMIZATION_WITHIN_GROUP
+6:P0089,6,6,P0089,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+6:P0090,6,6,P0090,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+6:P0091,6,6,P0091,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+6:P0092,6,6,P0092,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+6:P0093,6,6,P0093,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+6:P0094,6,6,P0094,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+6:P0095,6,6,P0095,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+6:P0096,6,6,P0096,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+6:P0097,6,6,P0097,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+6:P0098,6,6,P0098,18,1,True,True,,True,True,4,REMOVE:P0098@nT=6; ADD:P0106@nT=6; ADD:P0098@nT=27; REMOVE:P0106@nT=27,True,False,,False,,,H24_REOPTIMIZATION_WITHIN_GROUP
+6:P0099,6,6,P0099,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+6:P0100,6,6,P0100,18,1,True,True,,True,True,4,REMOVE:P0100@nT=6; ADD:P0106@nT=6; ADD:P0100@nT=27; REMOVE:P0106@nT=27,True,False,,False,,,H24_REOPTIMIZATION_WITHIN_GROUP
+6:P0101,6,6,P0101,18,1,True,True,,True,True,4,ADD:P0095@nT=6; REMOVE:P0101@nT=6; REMOVE:P0095@nT=20; ADD:P0101@nT=20,True,False,,False,,,H24_REOPTIMIZATION_WITHIN_GROUP
+6:P0102,6,6,P0102,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+6:P0103,6,6,P0103,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+6:P0104,6,6,P0104,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+6:P0105,6,6,P0105,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+6:P0106,6,6,P0106,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+7:P0107,7,7,P0107,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+7:P0108,7,7,P0108,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+7:P0109,7,7,P0109,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+7:P0110,7,7,P0110,17,1,True,True,,False,True,4,REMOVE:P0110@nT=7; ADD:P0123@nT=7; ADD:P0110@nT=28; REMOVE:P0123@nT=28,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+7:P0111,7,7,P0111,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+7:P0112,7,7,P0112,17,1,True,True,,False,True,4,REMOVE:P0112@nT=7; ADD:P0121@nT=7; ADD:P0112@nT=14; REMOVE:P0121@nT=14,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+7:P0113,7,7,P0113,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+7:P0114,7,7,P0114,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+7:P0115,7,7,P0115,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+7:P0116,7,7,P0116,17,1,True,True,,False,True,2,REMOVE:P0116@nT=7; ADD:P0123@nT=7,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+7:P0117,7,7,P0117,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+7:P0118,7,7,P0118,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+7:P0119,7,7,P0119,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+7:P0120,7,7,P0120,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+7:P0121,7,7,P0121,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+7:P0122,7,7,P0122,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+7:P0123,7,7,P0123,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+8:P0001,8,1,P0001,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+8:P0002,8,1,P0002,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+8:P0003,8,1,P0003,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+8:P0004,8,1,P0004,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+8:P0005,8,1,P0005,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+8:P0006,8,1,P0006,17,1,True,True,,False,True,4,REMOVE:P0006@nT=8; ADD:P0009@nT=8; ADD:P0006@nT=29; REMOVE:P0009@nT=29,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+8:P0007,8,1,P0007,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+8:P0008,8,1,P0008,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+8:P0009,8,1,P0009,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+8:P0010,8,1,P0010,17,1,True,True,,False,True,4,REMOVE:P0010@nT=8; ADD:P0011@nT=8; ADD:P0010@nT=15; REMOVE:P0011@nT=15,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+8:P0011,8,1,P0011,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+8:P0012,8,1,P0012,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+8:P0013,8,1,P0013,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+8:P0014,8,1,P0014,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+8:P0015,8,1,P0015,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+8:P0016,8,1,P0016,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+8:P0017,8,1,P0017,17,1,True,True,,False,True,4,ADD:P0005@nT=8; REMOVE:P0017@nT=8; REMOVE:P0009@nT=29; ADD:P0017@nT=29,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+9:P0018,9,2,P0018,18,1,True,False,P0021,True,True,0,,True,False,,False,,,SAME_GROUP_ACTIVE_REPLACEMENT
+9:P0019,9,2,P0019,18,1,True,False,P0021,True,True,0,,True,False,,False,,,SAME_GROUP_ACTIVE_REPLACEMENT
+9:P0020,9,2,P0020,18,1,True,False,P0021,True,True,0,,True,False,,False,,,SAME_GROUP_ACTIVE_REPLACEMENT
+9:P0021,9,2,P0021,18,1,False,False,,True,True,0,,True,False,,False,,,NO_CHANGE_REQUIRED
+9:P0022,9,2,P0022,18,1,True,False,P0021,True,True,0,,True,False,,False,,,SAME_GROUP_ACTIVE_REPLACEMENT
+9:P0023,9,2,P0023,18,1,True,False,P0021,True,True,0,,True,False,,False,,,SAME_GROUP_ACTIVE_REPLACEMENT
+9:P0024,9,2,P0024,18,1,True,False,P0021,True,True,0,,True,False,,False,,,SAME_GROUP_ACTIVE_REPLACEMENT
+9:P0025,9,2,P0025,18,1,True,False,P0021,True,True,0,,True,False,,False,,,SAME_GROUP_ACTIVE_REPLACEMENT
+9:P0026,9,2,P0026,18,1,True,False,P0021,True,True,0,,True,False,,False,,,SAME_GROUP_ACTIVE_REPLACEMENT
+9:P0027,9,2,P0027,18,1,True,False,P0021,True,True,0,,True,False,,False,,,SAME_GROUP_ACTIVE_REPLACEMENT
+9:P0028,9,2,P0028,18,1,True,False,P0021,True,True,0,,True,False,,False,,,SAME_GROUP_ACTIVE_REPLACEMENT
+9:P0029,9,2,P0029,18,1,True,False,P0021,True,True,0,,True,False,,False,,,SAME_GROUP_ACTIVE_REPLACEMENT
+9:P0030,9,2,P0030,18,1,True,True,P0021,True,True,4,ADD:P0018@nT=9; REMOVE:P0030@nT=9; REMOVE:P0018@nT=37; ADD:P0030@nT=37,True,False,,False,,,SAME_GROUP_ACTIVE_REPLACEMENT_AND_H24_REOPTIMIZATION
+9:P0031,9,2,P0031,18,1,True,False,P0021,True,True,0,,True,False,,False,,,SAME_GROUP_ACTIVE_REPLACEMENT
+9:P0032,9,2,P0032,18,1,True,False,P0021,True,True,0,,True,False,,False,,,SAME_GROUP_ACTIVE_REPLACEMENT
+9:P0033,9,2,P0033,18,1,True,False,P0021,True,True,0,,True,False,,False,,,SAME_GROUP_ACTIVE_REPLACEMENT
+9:P0034,9,2,P0034,18,1,True,True,P0021,True,True,4,REMOVE:P0025@nT=2; ADD:P0034@nT=2; ADD:P0025@nT=9; REMOVE:P0034@nT=9,True,False,,False,,,SAME_GROUP_ACTIVE_REPLACEMENT_AND_H24_REOPTIMIZATION
+9:P0035,9,2,P0035,18,1,True,True,P0021,True,True,4,ADD:P0018@nT=9; REMOVE:P0035@nT=9; REMOVE:P0018@nT=37; ADD:P0035@nT=37,True,False,,False,,,SAME_GROUP_ACTIVE_REPLACEMENT_AND_H24_REOPTIMIZATION
+10:P0036,10,3,P0036,18,1,True,False,P0049,True,True,0,,True,False,,False,,,SAME_GROUP_ACTIVE_REPLACEMENT
+10:P0037,10,3,P0037,18,1,True,False,P0049,True,True,0,,True,False,,False,,,SAME_GROUP_ACTIVE_REPLACEMENT
+10:P0038,10,3,P0038,18,1,True,False,P0049,True,True,0,,True,False,,False,,,SAME_GROUP_ACTIVE_REPLACEMENT
+10:P0039,10,3,P0039,18,1,True,False,P0049,True,True,0,,True,False,,False,,,SAME_GROUP_ACTIVE_REPLACEMENT
+10:P0040,10,3,P0040,18,1,True,True,P0049,True,True,4,ADD:P0040@nT=3; REMOVE:P0047@nT=3; REMOVE:P0040@nT=10; ADD:P0047@nT=10,True,False,,False,,,SAME_GROUP_ACTIVE_REPLACEMENT_AND_H24_REOPTIMIZATION
+10:P0041,10,3,P0041,18,1,True,False,P0049,True,True,0,,True,False,,False,,,SAME_GROUP_ACTIVE_REPLACEMENT
+10:P0042,10,3,P0042,18,1,True,False,P0049,True,True,0,,True,False,,False,,,SAME_GROUP_ACTIVE_REPLACEMENT
+10:P0043,10,3,P0043,18,1,True,True,P0049,True,True,4,ADD:P0043@nT=3; REMOVE:P0047@nT=3; REMOVE:P0043@nT=10; ADD:P0047@nT=10,True,False,,False,,,SAME_GROUP_ACTIVE_REPLACEMENT_AND_H24_REOPTIMIZATION
+10:P0044,10,3,P0044,18,1,True,False,P0049,True,True,0,,True,False,,False,,,SAME_GROUP_ACTIVE_REPLACEMENT
+10:P0045,10,3,P0045,18,1,True,False,P0049,True,True,0,,True,False,,False,,,SAME_GROUP_ACTIVE_REPLACEMENT
+10:P0046,10,3,P0046,18,1,True,False,P0049,True,True,0,,True,False,,False,,,SAME_GROUP_ACTIVE_REPLACEMENT
+10:P0047,10,3,P0047,18,1,True,False,P0049,True,True,0,,True,False,,False,,,SAME_GROUP_ACTIVE_REPLACEMENT
+10:P0048,10,3,P0048,18,1,True,False,P0049,True,True,0,,True,False,,False,,,SAME_GROUP_ACTIVE_REPLACEMENT
+10:P0049,10,3,P0049,18,1,False,False,,True,True,0,,True,False,,False,,,NO_CHANGE_REQUIRED
+10:P0050,10,3,P0050,18,1,True,False,P0049,True,True,0,,True,False,,False,,,SAME_GROUP_ACTIVE_REPLACEMENT
+10:P0051,10,3,P0051,18,1,True,False,P0049,True,True,0,,True,False,,False,,,SAME_GROUP_ACTIVE_REPLACEMENT
+10:P0052,10,3,P0052,18,1,True,False,P0049,True,True,0,,True,False,,False,,,SAME_GROUP_ACTIVE_REPLACEMENT
+10:P0053,10,3,P0053,18,1,True,True,P0049,True,True,4,ADD:P0036@nT=10; REMOVE:P0053@nT=10; REMOVE:P0036@nT=38; ADD:P0053@nT=38,True,False,,False,,,SAME_GROUP_ACTIVE_REPLACEMENT_AND_H24_REOPTIMIZATION
+11:P0054,11,4,P0054,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+11:P0055,11,4,P0055,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+11:P0056,11,4,P0056,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+11:P0057,11,4,P0057,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+11:P0058,11,4,P0058,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+11:P0059,11,4,P0059,17,1,True,True,,False,True,4,REMOVE:P0059@nT=11; ADD:P0064@nT=11; ADD:P0059@nT=25; REMOVE:P0064@nT=25,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+11:P0060,11,4,P0060,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+11:P0061,11,4,P0061,17,1,True,True,,False,True,4,REMOVE:P0061@nT=11; ADD:P0064@nT=11; ADD:P0061@nT=25; REMOVE:P0064@nT=25,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+11:P0062,11,4,P0062,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+11:P0063,11,4,P0063,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+11:P0064,11,4,P0064,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+11:P0065,11,4,P0065,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+11:P0066,11,4,P0066,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+11:P0067,11,4,P0067,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+11:P0068,11,4,P0068,17,1,True,True,,False,True,4,REMOVE:P0067@nT=4; ADD:P0068@nT=4; ADD:P0067@nT=11; REMOVE:P0068@nT=11,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+11:P0069,11,4,P0069,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+11:P0070,11,4,P0070,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+12:P0071,12,5,P0071,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+12:P0072,12,5,P0072,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+12:P0073,12,5,P0073,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+12:P0074,12,5,P0074,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+12:P0075,12,5,P0075,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+12:P0076,12,5,P0076,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+12:P0077,12,5,P0077,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+12:P0078,12,5,P0078,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+12:P0079,12,5,P0079,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+12:P0080,12,5,P0080,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+12:P0081,12,5,P0081,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+12:P0082,12,5,P0082,18,1,True,True,,True,True,4,ADD:P0081@nT=12; REMOVE:P0082@nT=12; REMOVE:P0081@nT=19; ADD:P0082@nT=19,True,False,,False,,,H24_REOPTIMIZATION_WITHIN_GROUP
+12:P0083,12,5,P0083,18,1,True,True,,True,True,4,ADD:P0081@nT=12; REMOVE:P0083@nT=12; REMOVE:P0081@nT=19; ADD:P0083@nT=19,True,False,,False,,,H24_REOPTIMIZATION_WITHIN_GROUP
+12:P0084,12,5,P0084,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+12:P0085,12,5,P0085,18,1,True,True,,True,True,4,ADD:P0080@nT=12; REMOVE:P0085@nT=12; REMOVE:P0080@nT=26; ADD:P0085@nT=26,True,False,,False,,,H24_REOPTIMIZATION_WITHIN_GROUP
+12:P0086,12,5,P0086,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+12:P0087,12,5,P0087,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+12:P0088,12,5,P0088,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+13:P0089,13,6,P0089,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+13:P0090,13,6,P0090,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+13:P0091,13,6,P0091,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+13:P0092,13,6,P0092,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+13:P0093,13,6,P0093,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+13:P0094,13,6,P0094,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+13:P0095,13,6,P0095,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+13:P0096,13,6,P0096,18,1,True,True,,True,True,4,REMOVE:P0096@nT=13; ADD:P0106@nT=13; ADD:P0096@nT=27; REMOVE:P0106@nT=27,True,False,,False,,,H24_REOPTIMIZATION_WITHIN_GROUP
+13:P0097,13,6,P0097,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+13:P0098,13,6,P0098,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+13:P0099,13,6,P0099,18,1,True,True,,True,True,4,ADD:P0094@nT=13; REMOVE:P0099@nT=13; REMOVE:P0094@nT=34; ADD:P0099@nT=34,True,False,,False,,,H24_REOPTIMIZATION_WITHIN_GROUP
+13:P0100,13,6,P0100,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+13:P0101,13,6,P0101,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+13:P0102,13,6,P0102,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+13:P0103,13,6,P0103,18,1,True,True,,True,True,4,REMOVE:P0103@nT=13; ADD:P0106@nT=13; ADD:P0103@nT=27; REMOVE:P0106@nT=27,True,False,,False,,,H24_REOPTIMIZATION_WITHIN_GROUP
+13:P0104,13,6,P0104,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+13:P0105,13,6,P0105,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+13:P0106,13,6,P0106,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+14:P0107,14,7,P0107,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+14:P0108,14,7,P0108,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+14:P0109,14,7,P0109,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+14:P0110,14,7,P0110,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+14:P0111,14,7,P0111,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+14:P0112,14,7,P0112,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+14:P0113,14,7,P0113,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+14:P0114,14,7,P0114,17,1,True,True,,False,True,4,REMOVE:P0114@nT=14; ADD:P0117@nT=14; ADD:P0114@nT=21; REMOVE:P0117@nT=21,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+14:P0115,14,7,P0115,17,1,True,True,,False,True,4,REMOVE:P0115@nT=14; ADD:P0117@nT=14; ADD:P0115@nT=21; REMOVE:P0117@nT=21,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+14:P0116,14,7,P0116,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+14:P0117,14,7,P0117,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+14:P0118,14,7,P0118,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+14:P0119,14,7,P0119,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+14:P0120,14,7,P0120,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+14:P0121,14,7,P0121,17,1,True,True,,False,True,4,REMOVE:P0116@nT=7; ADD:P0121@nT=7; ADD:P0111@nT=14; REMOVE:P0121@nT=14,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+14:P0122,14,7,P0122,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+14:P0123,14,7,P0123,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+15:P0001,15,1,P0001,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+15:P0002,15,1,P0002,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+15:P0003,15,1,P0003,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+15:P0004,15,1,P0004,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+15:P0005,15,1,P0005,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+15:P0006,15,1,P0006,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+15:P0007,15,1,P0007,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+15:P0008,15,1,P0008,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+15:P0009,15,1,P0009,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+15:P0010,15,1,P0010,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+15:P0011,15,1,P0011,17,1,True,True,,False,True,4,ADD:P0010@nT=15; REMOVE:P0011@nT=15; REMOVE:P0009@nT=29; ADD:P0011@nT=29,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+15:P0012,15,1,P0012,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+15:P0013,15,1,P0013,17,1,True,True,,False,True,4,ADD:P0001@nT=15; REMOVE:P0013@nT=15; REMOVE:P0001@nT=36; ADD:P0013@nT=36,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+15:P0014,15,1,P0014,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+15:P0015,15,1,P0015,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+15:P0016,15,1,P0016,17,1,True,True,,False,True,4,REMOVE:P0008@nT=1; ADD:P0016@nT=1; ADD:P0008@nT=15; REMOVE:P0016@nT=15,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+15:P0017,15,1,P0017,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+16:P0018,16,2,P0018,18,1,True,False,P0020,True,True,0,,True,False,,False,,,SAME_GROUP_ACTIVE_REPLACEMENT
+16:P0019,16,2,P0019,18,1,True,False,P0020,True,True,0,,True,False,,False,,,SAME_GROUP_ACTIVE_REPLACEMENT
+16:P0020,16,2,P0020,18,1,False,False,,True,True,0,,True,False,,False,,,NO_CHANGE_REQUIRED
+16:P0021,16,2,P0021,18,1,True,False,P0020,True,True,0,,True,False,,False,,,SAME_GROUP_ACTIVE_REPLACEMENT
+16:P0022,16,2,P0022,18,1,True,False,P0020,True,True,0,,True,False,,False,,,SAME_GROUP_ACTIVE_REPLACEMENT
+16:P0023,16,2,P0023,18,1,True,True,P0020,True,True,4,ADD:P0022@nT=16; REMOVE:P0023@nT=16; REMOVE:P0022@nT=23; ADD:P0023@nT=23,True,False,,False,,,SAME_GROUP_ACTIVE_REPLACEMENT_AND_H24_REOPTIMIZATION
+16:P0024,16,2,P0024,18,1,True,True,P0020,True,True,4,REMOVE:P0024@nT=16; ADD:P0028@nT=16; ADD:P0024@nT=30; REMOVE:P0028@nT=30,True,False,,False,,,SAME_GROUP_ACTIVE_REPLACEMENT_AND_H24_REOPTIMIZATION
+16:P0025,16,2,P0025,18,1,True,False,P0020,True,True,0,,True,False,,False,,,SAME_GROUP_ACTIVE_REPLACEMENT
+16:P0026,16,2,P0026,18,1,True,False,P0020,True,True,0,,True,False,,False,,,SAME_GROUP_ACTIVE_REPLACEMENT
+16:P0027,16,2,P0027,18,1,True,True,P0020,True,True,4,ADD:P0027@nT=9; REMOVE:P0035@nT=9; REMOVE:P0027@nT=16; ADD:P0035@nT=16,True,False,,False,,,SAME_GROUP_ACTIVE_REPLACEMENT_AND_H24_REOPTIMIZATION
+16:P0028,16,2,P0028,18,1,True,False,P0020,True,True,0,,True,False,,False,,,SAME_GROUP_ACTIVE_REPLACEMENT
+16:P0029,16,2,P0029,18,1,True,False,P0020,True,True,0,,True,False,,False,,,SAME_GROUP_ACTIVE_REPLACEMENT
+16:P0030,16,2,P0030,18,1,True,False,P0020,True,True,0,,True,False,,False,,,SAME_GROUP_ACTIVE_REPLACEMENT
+16:P0031,16,2,P0031,18,1,True,False,P0020,True,True,0,,True,False,,False,,,SAME_GROUP_ACTIVE_REPLACEMENT
+16:P0032,16,2,P0032,18,1,True,False,P0020,True,True,0,,True,False,,False,,,SAME_GROUP_ACTIVE_REPLACEMENT
+16:P0033,16,2,P0033,18,1,True,False,P0020,True,True,0,,True,False,,False,,,SAME_GROUP_ACTIVE_REPLACEMENT
+16:P0034,16,2,P0034,18,1,True,False,P0020,True,True,0,,True,False,,False,,,SAME_GROUP_ACTIVE_REPLACEMENT
+16:P0035,16,2,P0035,18,1,True,False,P0020,True,True,0,,True,False,,False,,,SAME_GROUP_ACTIVE_REPLACEMENT
+17:P0036,17,3,P0036,18,1,True,False,P0045,True,True,0,,True,False,,False,,,SAME_GROUP_ACTIVE_REPLACEMENT
+17:P0037,17,3,P0037,18,1,True,False,P0045,True,True,0,,True,False,,False,,,SAME_GROUP_ACTIVE_REPLACEMENT
+17:P0038,17,3,P0038,18,1,True,False,P0045,True,True,0,,True,False,,False,,,SAME_GROUP_ACTIVE_REPLACEMENT
+17:P0039,17,3,P0039,18,1,True,False,P0045,True,True,0,,True,False,,False,,,SAME_GROUP_ACTIVE_REPLACEMENT
+17:P0040,17,3,P0040,18,1,True,False,P0045,True,True,0,,True,False,,False,,,SAME_GROUP_ACTIVE_REPLACEMENT
+17:P0041,17,3,P0041,18,1,True,False,P0045,True,True,0,,True,False,,False,,,SAME_GROUP_ACTIVE_REPLACEMENT
+17:P0042,17,3,P0042,18,1,True,True,P0045,True,True,4,ADD:P0042@nT=10; REMOVE:P0053@nT=10; REMOVE:P0042@nT=17; ADD:P0053@nT=17,True,False,,False,,,SAME_GROUP_ACTIVE_REPLACEMENT_AND_H24_REOPTIMIZATION
+17:P0043,17,3,P0043,18,1,True,False,P0045,True,True,0,,True,False,,False,,,SAME_GROUP_ACTIVE_REPLACEMENT
+17:P0044,17,3,P0044,18,1,True,False,P0045,True,True,0,,True,False,,False,,,SAME_GROUP_ACTIVE_REPLACEMENT
+17:P0045,17,3,P0045,18,1,False,False,,True,True,0,,True,False,,False,,,NO_CHANGE_REQUIRED
+17:P0046,17,3,P0046,18,1,True,True,P0045,True,True,4,ADD:P0037@nT=17; REMOVE:P0046@nT=17; REMOVE:P0037@nT=38; ADD:P0046@nT=38,True,False,,False,,,SAME_GROUP_ACTIVE_REPLACEMENT_AND_H24_REOPTIMIZATION
+17:P0047,17,3,P0047,18,1,True,False,P0045,True,True,0,,True,False,,False,,,SAME_GROUP_ACTIVE_REPLACEMENT
+17:P0048,17,3,P0048,18,1,True,False,P0045,True,True,0,,True,False,,False,,,SAME_GROUP_ACTIVE_REPLACEMENT
+17:P0049,17,3,P0049,18,1,True,False,P0045,True,True,0,,True,False,,False,,,SAME_GROUP_ACTIVE_REPLACEMENT
+17:P0050,17,3,P0050,18,1,True,True,P0045,True,True,4,ADD:P0050@nT=10; REMOVE:P0053@nT=10; REMOVE:P0050@nT=17; ADD:P0053@nT=17,True,False,,False,,,SAME_GROUP_ACTIVE_REPLACEMENT_AND_H24_REOPTIMIZATION
+17:P0051,17,3,P0051,18,1,True,False,P0045,True,True,0,,True,False,,False,,,SAME_GROUP_ACTIVE_REPLACEMENT
+17:P0052,17,3,P0052,18,1,True,False,P0045,True,True,0,,True,False,,False,,,SAME_GROUP_ACTIVE_REPLACEMENT
+17:P0053,17,3,P0053,18,1,True,False,P0045,True,True,0,,True,False,,False,,,SAME_GROUP_ACTIVE_REPLACEMENT
+18:P0054,18,4,P0054,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+18:P0055,18,4,P0055,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+18:P0056,18,4,P0056,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+18:P0057,18,4,P0057,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+18:P0058,18,4,P0058,17,1,True,True,,False,True,4,ADD:P0058@nT=11; REMOVE:P0061@nT=11; REMOVE:P0058@nT=18; ADD:P0061@nT=18,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+18:P0059,18,4,P0059,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+18:P0060,18,4,P0060,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+18:P0061,18,4,P0061,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+18:P0062,18,4,P0062,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+18:P0063,18,4,P0063,17,1,True,True,,False,True,4,REMOVE:P0061@nT=11; ADD:P0063@nT=11; ADD:P0061@nT=18; REMOVE:P0063@nT=18,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+18:P0064,18,4,P0064,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+18:P0065,18,4,P0065,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+18:P0066,18,4,P0066,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+18:P0067,18,4,P0067,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+18:P0068,18,4,P0068,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+18:P0069,18,4,P0069,17,1,True,True,,False,True,4,REMOVE:P0067@nT=4; ADD:P0069@nT=4; ADD:P0067@nT=18; REMOVE:P0069@nT=18,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+18:P0070,18,4,P0070,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+19:P0071,19,5,P0071,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+19:P0072,19,5,P0072,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+19:P0073,19,5,P0073,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+19:P0074,19,5,P0074,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+19:P0075,19,5,P0075,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+19:P0076,19,5,P0076,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+19:P0077,19,5,P0077,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+19:P0078,19,5,P0078,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+19:P0079,19,5,P0079,18,1,True,True,,True,True,4,REMOVE:P0077@nT=5; ADD:P0079@nT=5; ADD:P0077@nT=19; REMOVE:P0079@nT=19,True,False,,False,,,H24_REOPTIMIZATION_WITHIN_GROUP
+19:P0080,19,5,P0080,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+19:P0081,19,5,P0081,18,1,True,True,,True,True,4,REMOVE:P0077@nT=5; ADD:P0081@nT=5; ADD:P0077@nT=19; REMOVE:P0081@nT=19,True,False,,False,,,H24_REOPTIMIZATION_WITHIN_GROUP
+19:P0082,19,5,P0082,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+19:P0083,19,5,P0083,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+19:P0084,19,5,P0084,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+19:P0085,19,5,P0085,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+19:P0086,19,5,P0086,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+19:P0087,19,5,P0087,18,1,True,True,,True,True,4,REMOVE:P0077@nT=5; ADD:P0087@nT=5; ADD:P0077@nT=19; REMOVE:P0087@nT=19,True,False,,False,,,H24_REOPTIMIZATION_WITHIN_GROUP
+19:P0088,19,5,P0088,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+20:P0089,20,6,P0089,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+20:P0090,20,6,P0090,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+20:P0091,20,6,P0091,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+20:P0092,20,6,P0092,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+20:P0093,20,6,P0093,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+20:P0094,20,6,P0094,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+20:P0095,20,6,P0095,18,1,True,True,,True,True,4,ADD:P0089@nT=20; REMOVE:P0095@nT=20; REMOVE:P0089@nT=41; ADD:P0095@nT=41,True,False,,False,,,H24_REOPTIMIZATION_WITHIN_GROUP
+20:P0096,20,6,P0096,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+20:P0097,20,6,P0097,18,1,True,True,,True,True,4,ADD:P0097@nT=13; REMOVE:P0099@nT=13; REMOVE:P0097@nT=20; ADD:P0099@nT=20,True,False,,False,,,H24_REOPTIMIZATION_WITHIN_GROUP
+20:P0098,20,6,P0098,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+20:P0099,20,6,P0099,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+20:P0100,20,6,P0100,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+20:P0101,20,6,P0101,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+20:P0102,20,6,P0102,18,1,True,True,,True,True,4,ADD:P0089@nT=20; REMOVE:P0102@nT=20; REMOVE:P0089@nT=41; ADD:P0102@nT=41,True,False,,False,,,H24_REOPTIMIZATION_WITHIN_GROUP
+20:P0103,20,6,P0103,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+20:P0104,20,6,P0104,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+20:P0105,20,6,P0105,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+20:P0106,20,6,P0106,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+21:P0107,21,7,P0107,17,1,True,False,,False,True,0,,False,True,P0076,True,All modeled constraints pass with the exact historical eligibility exception; availability and authorization unverified.,weekly staffing floor,HISTORICAL_CANDIDATE_REQUIRES_APPROVAL
+21:P0108,21,7,P0108,17,1,True,False,,False,True,0,,False,True,P0076,True,All modeled constraints pass with the exact historical eligibility exception; availability and authorization unverified.,weekly staffing floor,HISTORICAL_CANDIDATE_REQUIRES_APPROVAL
+21:P0109,21,7,P0109,17,1,True,False,,False,True,0,,False,True,P0076,True,All modeled constraints pass with the exact historical eligibility exception; availability and authorization unverified.,weekly staffing floor,HISTORICAL_CANDIDATE_REQUIRES_APPROVAL
+21:P0110,21,7,P0110,17,1,True,False,,False,True,0,,False,True,P0076,True,All modeled constraints pass with the exact historical eligibility exception; availability and authorization unverified.,weekly staffing floor,HISTORICAL_CANDIDATE_REQUIRES_APPROVAL
+21:P0111,21,7,P0111,17,1,True,True,,False,True,4,ADD:P0111@nT=14; REMOVE:P0115@nT=14; REMOVE:P0111@nT=21; ADD:P0115@nT=21,False,True,P0076,True,All modeled constraints pass with the exact historical eligibility exception; availability and authorization unverified.,weekly staffing floor,HISTORICAL_CANDIDATE_REQUIRES_APPROVAL
+21:P0112,21,7,P0112,17,1,True,False,,False,True,0,,False,True,P0076,True,All modeled constraints pass with the exact historical eligibility exception; availability and authorization unverified.,weekly staffing floor,HISTORICAL_CANDIDATE_REQUIRES_APPROVAL
+21:P0113,21,7,P0113,17,1,True,False,,False,True,0,,False,True,P0076,True,All modeled constraints pass with the exact historical eligibility exception; availability and authorization unverified.,weekly staffing floor,HISTORICAL_CANDIDATE_REQUIRES_APPROVAL
+21:P0114,21,7,P0114,17,1,True,False,,False,True,0,,False,True,P0076,True,All modeled constraints pass with the exact historical eligibility exception; availability and authorization unverified.,weekly staffing floor,HISTORICAL_CANDIDATE_REQUIRES_APPROVAL
+21:P0115,21,7,P0115,17,1,True,False,,False,True,0,,False,True,P0076,True,All modeled constraints pass with the exact historical eligibility exception; availability and authorization unverified.,weekly staffing floor,HISTORICAL_CANDIDATE_REQUIRES_APPROVAL
+21:P0116,21,7,P0116,17,1,True,False,,False,True,0,,False,True,P0076,True,All modeled constraints pass with the exact historical eligibility exception; availability and authorization unverified.,weekly staffing floor,HISTORICAL_CANDIDATE_REQUIRES_APPROVAL
+21:P0117,21,7,P0117,17,1,True,True,,False,True,4,REMOVE:P0117@nT=21; ADD:P0123@nT=21; ADD:P0117@nT=28; REMOVE:P0123@nT=28,False,True,P0076,True,All modeled constraints pass with the exact historical eligibility exception; availability and authorization unverified.,weekly staffing floor,HISTORICAL_CANDIDATE_REQUIRES_APPROVAL
+21:P0118,21,7,P0118,17,1,True,False,,False,True,0,,False,True,P0076,True,All modeled constraints pass with the exact historical eligibility exception; availability and authorization unverified.,weekly staffing floor,HISTORICAL_CANDIDATE_REQUIRES_APPROVAL
+21:P0119,21,7,P0119,17,1,True,False,,False,True,0,,False,True,P0076,True,All modeled constraints pass with the exact historical eligibility exception; availability and authorization unverified.,weekly staffing floor,HISTORICAL_CANDIDATE_REQUIRES_APPROVAL
+21:P0120,21,7,P0120,17,1,True,True,,False,True,4,REMOVE:P0114@nT=14; ADD:P0120@nT=14; ADD:P0114@nT=21; REMOVE:P0120@nT=21,False,True,P0076,True,All modeled constraints pass with the exact historical eligibility exception; availability and authorization unverified.,weekly staffing floor,HISTORICAL_CANDIDATE_REQUIRES_APPROVAL
+21:P0121,21,7,P0121,17,1,True,False,,False,True,0,,False,True,P0076,True,All modeled constraints pass with the exact historical eligibility exception; availability and authorization unverified.,weekly staffing floor,HISTORICAL_CANDIDATE_REQUIRES_APPROVAL
+21:P0122,21,7,P0122,17,1,True,False,,False,True,0,,False,True,P0076,True,All modeled constraints pass with the exact historical eligibility exception; availability and authorization unverified.,weekly staffing floor,HISTORICAL_CANDIDATE_REQUIRES_APPROVAL
+21:P0123,21,7,P0123,17,1,True,False,,False,True,0,,False,True,P0076,True,All modeled constraints pass with the exact historical eligibility exception; availability and authorization unverified.,weekly staffing floor,HISTORICAL_CANDIDATE_REQUIRES_APPROVAL
+22:P0001,22,1,P0001,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+22:P0002,22,1,P0002,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+22:P0003,22,1,P0003,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+22:P0004,22,1,P0004,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+22:P0005,22,1,P0005,17,1,True,True,,False,True,4,REMOVE:P0005@nT=22; ADD:P0011@nT=22; ADD:P0005@nT=29; REMOVE:P0009@nT=29,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+22:P0006,22,1,P0006,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+22:P0007,22,1,P0007,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+22:P0008,22,1,P0008,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+22:P0009,22,1,P0009,17,1,True,True,,False,True,2,REMOVE:P0009@nT=22; ADD:P0011@nT=22,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+22:P0010,22,1,P0010,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+22:P0011,22,1,P0011,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+22:P0012,22,1,P0012,17,1,True,True,,False,True,4,ADD:P0010@nT=22; REMOVE:P0012@nT=22; REMOVE:P0009@nT=29; ADD:P0012@nT=29,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+22:P0013,22,1,P0013,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+22:P0014,22,1,P0014,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+22:P0015,22,1,P0015,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+22:P0016,22,1,P0016,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+22:P0017,22,1,P0017,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+23:P0018,23,2,P0018,18,1,True,False,P0029,True,True,0,,True,False,,False,,,SAME_GROUP_ACTIVE_REPLACEMENT
+23:P0019,23,2,P0019,18,1,True,False,P0029,True,True,0,,True,False,,False,,,SAME_GROUP_ACTIVE_REPLACEMENT
+23:P0020,23,2,P0020,18,1,True,False,P0029,True,True,0,,True,False,,False,,,SAME_GROUP_ACTIVE_REPLACEMENT
+23:P0021,23,2,P0021,18,1,True,True,P0029,True,True,4,REMOVE:P0021@nT=23; ADD:P0028@nT=23; ADD:P0021@nT=30; REMOVE:P0028@nT=30,True,False,,False,,,SAME_GROUP_ACTIVE_REPLACEMENT_AND_H24_REOPTIMIZATION
+23:P0022,23,2,P0022,18,1,True,True,P0029,True,True,4,REMOVE:P0022@nT=23; ADD:P0028@nT=23; ADD:P0022@nT=30; REMOVE:P0028@nT=30,True,False,,False,,,SAME_GROUP_ACTIVE_REPLACEMENT_AND_H24_REOPTIMIZATION
+23:P0023,23,2,P0023,18,1,True,False,P0029,True,True,0,,True,False,,False,,,SAME_GROUP_ACTIVE_REPLACEMENT
+23:P0024,23,2,P0024,18,1,True,False,P0029,True,True,0,,True,False,,False,,,SAME_GROUP_ACTIVE_REPLACEMENT
+23:P0025,23,2,P0025,18,1,True,False,P0029,True,True,0,,True,False,,False,,,SAME_GROUP_ACTIVE_REPLACEMENT
+23:P0026,23,2,P0026,18,1,True,False,P0029,True,True,0,,True,False,,False,,,SAME_GROUP_ACTIVE_REPLACEMENT
+23:P0027,23,2,P0027,18,1,True,False,P0029,True,True,0,,True,False,,False,,,SAME_GROUP_ACTIVE_REPLACEMENT
+23:P0028,23,2,P0028,18,1,True,False,P0029,True,True,0,,True,False,,False,,,SAME_GROUP_ACTIVE_REPLACEMENT
+23:P0029,23,2,P0029,18,1,False,False,,True,True,0,,True,False,,False,,,NO_CHANGE_REQUIRED
+23:P0030,23,2,P0030,18,1,True,False,P0029,True,True,0,,True,False,,False,,,SAME_GROUP_ACTIVE_REPLACEMENT
+23:P0031,23,2,P0031,18,1,True,False,P0029,True,True,0,,True,False,,False,,,SAME_GROUP_ACTIVE_REPLACEMENT
+23:P0032,23,2,P0032,18,1,True,True,P0029,True,True,4,ADD:P0028@nT=23; REMOVE:P0032@nT=23; REMOVE:P0028@nT=30; ADD:P0032@nT=30,True,False,,False,,,SAME_GROUP_ACTIVE_REPLACEMENT_AND_H24_REOPTIMIZATION
+23:P0033,23,2,P0033,18,1,True,False,P0029,True,True,0,,True,False,,False,,,SAME_GROUP_ACTIVE_REPLACEMENT
+23:P0034,23,2,P0034,18,1,True,False,P0029,True,True,0,,True,False,,False,,,SAME_GROUP_ACTIVE_REPLACEMENT
+23:P0035,23,2,P0035,18,1,True,False,P0029,True,True,0,,True,False,,False,,,SAME_GROUP_ACTIVE_REPLACEMENT
+24:P0036,24,3,P0036,18,1,True,False,P0039,True,True,0,,True,False,,False,,,SAME_GROUP_ACTIVE_REPLACEMENT
+24:P0037,24,3,P0037,18,1,True,False,P0039,True,True,0,,True,False,,False,,,SAME_GROUP_ACTIVE_REPLACEMENT
+24:P0038,24,3,P0038,18,1,True,False,P0039,True,True,0,,True,False,,False,,,SAME_GROUP_ACTIVE_REPLACEMENT
+24:P0039,24,3,P0039,18,1,False,False,,True,True,0,,True,False,,False,,,NO_CHANGE_REQUIRED
+24:P0040,24,3,P0040,18,1,True,False,P0039,True,True,0,,True,False,,False,,,SAME_GROUP_ACTIVE_REPLACEMENT
+24:P0041,24,3,P0041,18,1,True,False,P0039,True,True,0,,True,False,,False,,,SAME_GROUP_ACTIVE_REPLACEMENT
+24:P0042,24,3,P0042,18,1,True,False,P0039,True,True,0,,True,False,,False,,,SAME_GROUP_ACTIVE_REPLACEMENT
+24:P0043,24,3,P0043,18,1,True,False,P0039,True,True,0,,True,False,,False,,,SAME_GROUP_ACTIVE_REPLACEMENT
+24:P0044,24,3,P0044,18,1,True,True,P0039,True,True,4,ADD:P0044@nT=3; REMOVE:P0047@nT=3; REMOVE:P0044@nT=24; ADD:P0047@nT=24,True,False,,False,,,SAME_GROUP_ACTIVE_REPLACEMENT_AND_H24_REOPTIMIZATION
+24:P0045,24,3,P0045,18,1,True,False,P0039,True,True,0,,True,False,,False,,,SAME_GROUP_ACTIVE_REPLACEMENT
+24:P0046,24,3,P0046,18,1,True,False,P0039,True,True,0,,True,False,,False,,,SAME_GROUP_ACTIVE_REPLACEMENT
+24:P0047,24,3,P0047,18,1,True,False,P0039,True,True,0,,True,False,,False,,,SAME_GROUP_ACTIVE_REPLACEMENT
+24:P0048,24,3,P0048,18,1,True,True,P0039,True,True,4,ADD:P0045@nT=24; REMOVE:P0048@nT=24; REMOVE:P0045@nT=31; ADD:P0048@nT=31,True,False,,False,,,SAME_GROUP_ACTIVE_REPLACEMENT_AND_H24_REOPTIMIZATION
+24:P0049,24,3,P0049,18,1,True,True,P0039,True,True,4,REMOVE:P0047@nT=3; ADD:P0049@nT=3; ADD:P0047@nT=24; REMOVE:P0049@nT=24,True,False,,False,,,SAME_GROUP_ACTIVE_REPLACEMENT_AND_H24_REOPTIMIZATION
+24:P0050,24,3,P0050,18,1,True,False,P0039,True,True,0,,True,False,,False,,,SAME_GROUP_ACTIVE_REPLACEMENT
+24:P0051,24,3,P0051,18,1,True,False,P0039,True,True,0,,True,False,,False,,,SAME_GROUP_ACTIVE_REPLACEMENT
+24:P0052,24,3,P0052,18,1,True,False,P0039,True,True,0,,True,False,,False,,,SAME_GROUP_ACTIVE_REPLACEMENT
+24:P0053,24,3,P0053,18,1,True,False,P0039,True,True,0,,True,False,,False,,,SAME_GROUP_ACTIVE_REPLACEMENT
+25:P0054,25,4,P0054,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+25:P0055,25,4,P0055,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+25:P0056,25,4,P0056,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+25:P0057,25,4,P0057,17,1,True,True,,False,True,2,REMOVE:P0057@nT=25; ADD:P0060@nT=25,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+25:P0058,25,4,P0058,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+25:P0059,25,4,P0059,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+25:P0060,25,4,P0060,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+25:P0061,25,4,P0061,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+25:P0062,25,4,P0062,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+25:P0063,25,4,P0063,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+25:P0064,25,4,P0064,17,1,True,True,,False,True,4,REMOVE:P0063@nT=18; ADD:P0064@nT=18; ADD:P0063@nT=25; REMOVE:P0064@nT=25,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+25:P0065,25,4,P0065,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+25:P0066,25,4,P0066,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+25:P0067,25,4,P0067,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+25:P0068,25,4,P0068,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+25:P0069,25,4,P0069,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+25:P0070,25,4,P0070,17,1,True,True,,False,True,4,REMOVE:P0063@nT=18; ADD:P0070@nT=18; ADD:P0063@nT=25; REMOVE:P0070@nT=25,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+26:P0071,26,5,P0071,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+26:P0072,26,5,P0072,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+26:P0073,26,5,P0073,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+26:P0074,26,5,P0074,18,1,True,True,,True,True,4,ADD:P0072@nT=26; REMOVE:P0074@nT=26; REMOVE:P0072@nT=40; ADD:P0074@nT=40,True,False,,False,,,H24_REOPTIMIZATION_WITHIN_GROUP
+26:P0075,26,5,P0075,18,1,True,True,,True,True,4,ADD:P0072@nT=26; REMOVE:P0075@nT=26; REMOVE:P0072@nT=40; ADD:P0075@nT=40,True,False,,False,,,H24_REOPTIMIZATION_WITHIN_GROUP
+26:P0076,26,5,P0076,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+26:P0077,26,5,P0077,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+26:P0078,26,5,P0078,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+26:P0079,26,5,P0079,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+26:P0080,26,5,P0080,18,1,True,True,,True,True,4,ADD:P0080@nT=19; REMOVE:P0081@nT=19; REMOVE:P0080@nT=26; ADD:P0081@nT=26,True,False,,False,,,H24_REOPTIMIZATION_WITHIN_GROUP
+26:P0081,26,5,P0081,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+26:P0082,26,5,P0082,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+26:P0083,26,5,P0083,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+26:P0084,26,5,P0084,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+26:P0085,26,5,P0085,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+26:P0086,26,5,P0086,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+26:P0087,26,5,P0087,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+26:P0088,26,5,P0088,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+27:P0089,27,6,P0089,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+27:P0090,27,6,P0090,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+27:P0091,27,6,P0091,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+27:P0092,27,6,P0092,18,1,True,True,,True,True,4,ADD:P0090@nT=27; REMOVE:P0092@nT=27; REMOVE:P0090@nT=41; ADD:P0092@nT=41,True,False,,False,,,H24_REOPTIMIZATION_WITHIN_GROUP
+27:P0093,27,6,P0093,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+27:P0094,27,6,P0094,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+27:P0095,27,6,P0095,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+27:P0096,27,6,P0096,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+27:P0097,27,6,P0097,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+27:P0098,27,6,P0098,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+27:P0099,27,6,P0099,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+27:P0100,27,6,P0100,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+27:P0101,27,6,P0101,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+27:P0102,27,6,P0102,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+27:P0103,27,6,P0103,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+27:P0104,27,6,P0104,18,1,True,True,,True,True,4,REMOVE:P0095@nT=20; ADD:P0104@nT=20; ADD:P0095@nT=27; REMOVE:P0104@nT=27,True,False,,False,,,H24_REOPTIMIZATION_WITHIN_GROUP
+27:P0105,27,6,P0105,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+27:P0106,27,6,P0106,18,1,True,True,,True,True,4,REMOVE:P0099@nT=13; ADD:P0106@nT=13; ADD:P0099@nT=27; REMOVE:P0106@nT=27,True,False,,False,,,H24_REOPTIMIZATION_WITHIN_GROUP
+28:P0107,28,7,P0107,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+28:P0108,28,7,P0108,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+28:P0109,28,7,P0109,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+28:P0110,28,7,P0110,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+28:P0111,28,7,P0111,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+28:P0112,28,7,P0112,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+28:P0113,28,7,P0113,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+28:P0114,28,7,P0114,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+28:P0115,28,7,P0115,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+28:P0116,28,7,P0116,17,1,True,True,,False,True,2,REMOVE:P0116@nT=28; ADD:P0117@nT=28,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+28:P0117,28,7,P0117,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+28:P0118,28,7,P0118,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+28:P0119,28,7,P0119,17,1,True,True,,False,True,4,ADD:P0107@nT=28; REMOVE:P0119@nT=28; REMOVE:P0107@nT=42; ADD:P0119@nT=42,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+28:P0120,28,7,P0120,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+28:P0121,28,7,P0121,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+28:P0122,28,7,P0122,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+28:P0123,28,7,P0123,17,1,True,True,,False,True,4,ADD:P0107@nT=28; REMOVE:P0123@nT=28; REMOVE:P0107@nT=42; ADD:P0123@nT=42,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+29:P0001,29,1,P0001,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+29:P0002,29,1,P0002,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+29:P0003,29,1,P0003,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+29:P0004,29,1,P0004,17,1,True,True,,False,True,4,ADD:P0004@nT=1; REMOVE:P0015@nT=1; REMOVE:P0004@nT=29; ADD:P0015@nT=29,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+29:P0005,29,1,P0005,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+29:P0006,29,1,P0006,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+29:P0007,29,1,P0007,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+29:P0008,29,1,P0008,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+29:P0009,29,1,P0009,17,1,True,True,,False,True,2,ADD:P0005@nT=29; REMOVE:P0009@nT=29,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+29:P0010,29,1,P0010,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+29:P0011,29,1,P0011,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+29:P0012,29,1,P0012,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+29:P0013,29,1,P0013,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+29:P0014,29,1,P0014,17,1,True,True,,False,True,4,ADD:P0014@nT=1; REMOVE:P0015@nT=1; REMOVE:P0014@nT=29; ADD:P0015@nT=29,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+29:P0015,29,1,P0015,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+29:P0016,29,1,P0016,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+29:P0017,29,1,P0017,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+30:P0018,30,2,P0018,18,1,True,False,P0034,True,True,0,,True,False,,False,,,SAME_GROUP_ACTIVE_REPLACEMENT
+30:P0019,30,2,P0019,18,1,True,False,P0034,True,True,0,,True,False,,False,,,SAME_GROUP_ACTIVE_REPLACEMENT
+30:P0020,30,2,P0020,18,1,True,False,P0034,True,True,0,,True,False,,False,,,SAME_GROUP_ACTIVE_REPLACEMENT
+30:P0021,30,2,P0021,18,1,True,False,P0034,True,True,0,,True,False,,False,,,SAME_GROUP_ACTIVE_REPLACEMENT
+30:P0022,30,2,P0022,18,1,True,False,P0034,True,True,0,,True,False,,False,,,SAME_GROUP_ACTIVE_REPLACEMENT
+30:P0023,30,2,P0023,18,1,True,False,P0034,True,True,0,,True,False,,False,,,SAME_GROUP_ACTIVE_REPLACEMENT
+30:P0024,30,2,P0024,18,1,True,False,P0034,True,True,0,,True,False,,False,,,SAME_GROUP_ACTIVE_REPLACEMENT
+30:P0025,30,2,P0025,18,1,True,False,P0034,True,True,0,,True,False,,False,,,SAME_GROUP_ACTIVE_REPLACEMENT
+30:P0026,30,2,P0026,18,1,True,True,P0034,True,True,4,ADD:P0026@nT=9; REMOVE:P0035@nT=9; REMOVE:P0026@nT=30; ADD:P0035@nT=30,True,False,,False,,,SAME_GROUP_ACTIVE_REPLACEMENT_AND_H24_REOPTIMIZATION
+30:P0027,30,2,P0027,18,1,True,False,P0034,True,True,0,,True,False,,False,,,SAME_GROUP_ACTIVE_REPLACEMENT
+30:P0028,30,2,P0028,18,1,True,True,P0034,True,True,4,ADD:P0018@nT=30; REMOVE:P0028@nT=30; REMOVE:P0018@nT=37; ADD:P0028@nT=37,True,False,,False,,,SAME_GROUP_ACTIVE_REPLACEMENT_AND_H24_REOPTIMIZATION
+30:P0029,30,2,P0029,18,1,True,True,P0034,True,True,4,ADD:P0019@nT=30; REMOVE:P0029@nT=30; REMOVE:P0019@nT=37; ADD:P0029@nT=37,True,False,,False,,,SAME_GROUP_ACTIVE_REPLACEMENT_AND_H24_REOPTIMIZATION
+30:P0030,30,2,P0030,18,1,True,False,P0034,True,True,0,,True,False,,False,,,SAME_GROUP_ACTIVE_REPLACEMENT
+30:P0031,30,2,P0031,18,1,True,False,P0034,True,True,0,,True,False,,False,,,SAME_GROUP_ACTIVE_REPLACEMENT
+30:P0032,30,2,P0032,18,1,True,False,P0034,True,True,0,,True,False,,False,,,SAME_GROUP_ACTIVE_REPLACEMENT
+30:P0033,30,2,P0033,18,1,True,False,P0034,True,True,0,,True,False,,False,,,SAME_GROUP_ACTIVE_REPLACEMENT
+30:P0034,30,2,P0034,18,1,False,False,,True,True,0,,True,False,,False,,,NO_CHANGE_REQUIRED
+30:P0035,30,2,P0035,18,1,True,False,P0034,True,True,0,,True,False,,False,,,SAME_GROUP_ACTIVE_REPLACEMENT
+31:P0036,31,3,P0036,18,1,True,False,P0037,True,True,0,,True,False,,False,,,SAME_GROUP_ACTIVE_REPLACEMENT
+31:P0037,31,3,P0037,18,1,False,False,,True,True,0,,True,False,,False,,,NO_CHANGE_REQUIRED
+31:P0038,31,3,P0038,18,1,True,False,P0037,True,True,0,,True,False,,False,,,SAME_GROUP_ACTIVE_REPLACEMENT
+31:P0039,31,3,P0039,18,1,True,True,P0037,True,True,4,ADD:P0039@nT=10; REMOVE:P0043@nT=10; REMOVE:P0039@nT=31; ADD:P0043@nT=31,True,False,,False,,,SAME_GROUP_ACTIVE_REPLACEMENT_AND_H24_REOPTIMIZATION
+31:P0040,31,3,P0040,18,1,True,False,P0037,True,True,0,,True,False,,False,,,SAME_GROUP_ACTIVE_REPLACEMENT
+31:P0041,31,3,P0041,18,1,True,False,P0037,True,True,0,,True,False,,False,,,SAME_GROUP_ACTIVE_REPLACEMENT
+31:P0042,31,3,P0042,18,1,True,False,P0037,True,True,0,,True,False,,False,,,SAME_GROUP_ACTIVE_REPLACEMENT
+31:P0043,31,3,P0043,18,1,True,False,P0037,True,True,0,,True,False,,False,,,SAME_GROUP_ACTIVE_REPLACEMENT
+31:P0044,31,3,P0044,18,1,True,False,P0037,True,True,0,,True,False,,False,,,SAME_GROUP_ACTIVE_REPLACEMENT
+31:P0045,31,3,P0045,18,1,True,True,P0037,True,True,4,ADD:P0045@nT=3; REMOVE:P0047@nT=3; REMOVE:P0045@nT=31; ADD:P0047@nT=31,True,False,,False,,,SAME_GROUP_ACTIVE_REPLACEMENT_AND_H24_REOPTIMIZATION
+31:P0046,31,3,P0046,18,1,True,False,P0037,True,True,0,,True,False,,False,,,SAME_GROUP_ACTIVE_REPLACEMENT
+31:P0047,31,3,P0047,18,1,True,False,P0037,True,True,0,,True,False,,False,,,SAME_GROUP_ACTIVE_REPLACEMENT
+31:P0048,31,3,P0048,18,1,True,False,P0037,True,True,0,,True,False,,False,,,SAME_GROUP_ACTIVE_REPLACEMENT
+31:P0049,31,3,P0049,18,1,True,False,P0037,True,True,0,,True,False,,False,,,SAME_GROUP_ACTIVE_REPLACEMENT
+31:P0050,31,3,P0050,18,1,True,False,P0037,True,True,0,,True,False,,False,,,SAME_GROUP_ACTIVE_REPLACEMENT
+31:P0051,31,3,P0051,18,1,True,False,P0037,True,True,0,,True,False,,False,,,SAME_GROUP_ACTIVE_REPLACEMENT
+31:P0052,31,3,P0052,18,1,True,True,P0037,True,True,4,REMOVE:P0042@nT=17; ADD:P0052@nT=17; ADD:P0042@nT=31; REMOVE:P0052@nT=31,True,False,,False,,,SAME_GROUP_ACTIVE_REPLACEMENT_AND_H24_REOPTIMIZATION
+31:P0053,31,3,P0053,18,1,True,False,P0037,True,True,0,,True,False,,False,,,SAME_GROUP_ACTIVE_REPLACEMENT
+32:P0054,32,4,P0054,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+32:P0055,32,4,P0055,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+32:P0056,32,4,P0056,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+32:P0057,32,4,P0057,17,1,True,True,,False,True,2,REMOVE:P0057@nT=32; ADD:P0059@nT=32,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+32:P0058,32,4,P0058,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+32:P0059,32,4,P0059,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+32:P0060,32,4,P0060,17,1,True,True,,False,True,4,ADD:P0055@nT=32; REMOVE:P0060@nT=32; REMOVE:P0055@nT=39; ADD:P0060@nT=39,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+32:P0061,32,4,P0061,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+32:P0062,32,4,P0062,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+32:P0063,32,4,P0063,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+32:P0064,32,4,P0064,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+32:P0065,32,4,P0065,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+32:P0066,32,4,P0066,17,1,True,True,,False,True,4,REMOVE:P0063@nT=18; ADD:P0066@nT=18; ADD:P0063@nT=32; REMOVE:P0066@nT=32,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+32:P0067,32,4,P0067,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+32:P0068,32,4,P0068,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+32:P0069,32,4,P0069,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+32:P0070,32,4,P0070,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+33:P0071,33,5,P0071,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+33:P0072,33,5,P0072,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+33:P0073,33,5,P0073,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+33:P0074,33,5,P0074,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+33:P0075,33,5,P0075,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+33:P0076,33,5,P0076,18,1,True,True,,True,True,4,ADD:P0076@nT=19; REMOVE:P0081@nT=19; REMOVE:P0076@nT=33; ADD:P0081@nT=33,True,False,,False,,,H24_REOPTIMIZATION_WITHIN_GROUP
+33:P0077,33,5,P0077,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+33:P0078,33,5,P0078,18,1,True,True,,True,True,4,ADD:P0072@nT=33; REMOVE:P0078@nT=33; REMOVE:P0072@nT=40; ADD:P0078@nT=40,True,False,,False,,,H24_REOPTIMIZATION_WITHIN_GROUP
+33:P0079,33,5,P0079,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+33:P0080,33,5,P0080,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+33:P0081,33,5,P0081,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+33:P0082,33,5,P0082,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+33:P0083,33,5,P0083,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+33:P0084,33,5,P0084,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+33:P0085,33,5,P0085,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+33:P0086,33,5,P0086,18,1,True,True,,True,True,4,ADD:P0072@nT=33; REMOVE:P0086@nT=33; REMOVE:P0072@nT=40; ADD:P0086@nT=40,True,False,,False,,,H24_REOPTIMIZATION_WITHIN_GROUP
+33:P0087,33,5,P0087,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+33:P0088,33,5,P0088,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+34:P0089,34,6,P0089,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+34:P0090,34,6,P0090,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+34:P0091,34,6,P0091,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+34:P0092,34,6,P0092,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+34:P0093,34,6,P0093,18,1,True,True,,True,True,4,ADD:P0090@nT=34; REMOVE:P0093@nT=34; REMOVE:P0090@nT=41; ADD:P0093@nT=41,True,False,,False,,,H24_REOPTIMIZATION_WITHIN_GROUP
+34:P0094,34,6,P0094,18,1,True,True,,True,True,4,ADD:P0094@nT=13; REMOVE:P0099@nT=13; REMOVE:P0094@nT=34; ADD:P0099@nT=34,True,False,,False,,,H24_REOPTIMIZATION_WITHIN_GROUP
+34:P0095,34,6,P0095,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+34:P0096,34,6,P0096,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+34:P0097,34,6,P0097,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+34:P0098,34,6,P0098,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+34:P0099,34,6,P0099,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+34:P0100,34,6,P0100,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+34:P0101,34,6,P0101,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+34:P0102,34,6,P0102,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+34:P0103,34,6,P0103,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+34:P0104,34,6,P0104,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+34:P0105,34,6,P0105,18,1,True,True,,True,True,4,ADD:P0105@nT=27; REMOVE:P0106@nT=27; REMOVE:P0105@nT=34; ADD:P0106@nT=34,True,False,,False,,,H24_REOPTIMIZATION_WITHIN_GROUP
+34:P0106,34,6,P0106,18,1,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+35:P0107,35,7,P0107,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+35:P0108,35,7,P0108,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+35:P0109,35,7,P0109,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+35:P0110,35,7,P0110,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+35:P0111,35,7,P0111,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+35:P0112,35,7,P0112,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+35:P0113,35,7,P0113,17,1,True,True,,False,True,4,ADD:P0113@nT=28; REMOVE:P0116@nT=28; ADD:P0111@nT=35; REMOVE:P0113@nT=35,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+35:P0114,35,7,P0114,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+35:P0115,35,7,P0115,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+35:P0116,35,7,P0116,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+35:P0117,35,7,P0117,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+35:P0118,35,7,P0118,17,1,True,True,,False,True,4,REMOVE:P0116@nT=28; ADD:P0118@nT=28; ADD:P0111@nT=35; REMOVE:P0118@nT=35,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+35:P0119,35,7,P0119,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+35:P0120,35,7,P0120,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+35:P0121,35,7,P0121,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+35:P0122,35,7,P0122,17,1,True,True,,False,True,4,REMOVE:P0110@nT=7; ADD:P0122@nT=7; ADD:P0110@nT=35; REMOVE:P0122@nT=35,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+35:P0123,35,7,P0123,17,1,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+36:P0001,36,1,P0001,17,2,True,True,,False,True,4,ADD:P0001@nT=15; REMOVE:P0013@nT=15; REMOVE:P0001@nT=36; ADD:P0013@nT=36,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+36:P0002,36,1,P0002,17,2,True,True,,False,True,4,ADD:P0002@nT=29; REMOVE:P0014@nT=29; REMOVE:P0002@nT=36; ADD:P0014@nT=36,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+36:P0003,36,1,P0003,17,2,True,True,,False,True,4,ADD:P0003@nT=1; REMOVE:P0007@nT=1; REMOVE:P0003@nT=36; ADD:P0007@nT=36,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+36:P0004,36,1,P0004,17,2,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+36:P0005,36,1,P0005,17,2,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+36:P0006,36,1,P0006,17,2,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+36:P0007,36,1,P0007,17,2,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+36:P0008,36,1,P0008,17,2,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+36:P0009,36,1,P0009,17,2,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+36:P0010,36,1,P0010,17,2,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+36:P0011,36,1,P0011,17,2,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+36:P0012,36,1,P0012,17,2,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+36:P0013,36,1,P0013,17,2,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+36:P0014,36,1,P0014,17,2,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+36:P0015,36,1,P0015,17,2,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+36:P0016,36,1,P0016,17,2,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+36:P0017,36,1,P0017,17,2,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+37:P0018,37,2,P0018,18,2,True,True,,True,True,4,ADD:P0018@nT=16; REMOVE:P0023@nT=16; REMOVE:P0018@nT=37; ADD:P0023@nT=37,True,False,,False,,,H24_REOPTIMIZATION_WITHIN_GROUP
+37:P0019,37,2,P0019,18,2,True,True,,True,True,4,ADD:P0019@nT=16; REMOVE:P0023@nT=16; REMOVE:P0019@nT=37; ADD:P0023@nT=37,True,False,,False,,,H24_REOPTIMIZATION_WITHIN_GROUP
+37:P0020,37,2,P0020,18,2,True,True,,True,True,4,ADD:P0020@nT=23; REMOVE:P0022@nT=23; REMOVE:P0020@nT=37; ADD:P0022@nT=37,True,False,,False,,,H24_REOPTIMIZATION_WITHIN_GROUP
+37:P0021,37,2,P0021,18,2,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+37:P0022,37,2,P0022,18,2,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+37:P0023,37,2,P0023,18,2,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+37:P0024,37,2,P0024,18,2,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+37:P0025,37,2,P0025,18,2,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+37:P0026,37,2,P0026,18,2,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+37:P0027,37,2,P0027,18,2,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+37:P0028,37,2,P0028,18,2,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+37:P0029,37,2,P0029,18,2,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+37:P0030,37,2,P0030,18,2,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+37:P0031,37,2,P0031,18,2,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+37:P0032,37,2,P0032,18,2,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+37:P0033,37,2,P0033,18,2,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+37:P0034,37,2,P0034,18,2,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+37:P0035,37,2,P0035,18,2,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+38:P0036,38,3,P0036,18,2,True,True,,True,True,4,ADD:P0036@nT=3; REMOVE:P0041@nT=3; REMOVE:P0036@nT=38; ADD:P0041@nT=38,True,False,,False,,,H24_REOPTIMIZATION_WITHIN_GROUP
+38:P0037,38,3,P0037,18,2,True,True,,True,True,4,ADD:P0037@nT=3; REMOVE:P0041@nT=3; REMOVE:P0037@nT=38; ADD:P0041@nT=38,True,False,,False,,,H24_REOPTIMIZATION_WITHIN_GROUP
+38:P0038,38,3,P0038,18,2,True,True,,True,True,4,ADD:P0038@nT=3; REMOVE:P0041@nT=3; REMOVE:P0038@nT=38; ADD:P0041@nT=38,True,False,,False,,,H24_REOPTIMIZATION_WITHIN_GROUP
+38:P0039,38,3,P0039,18,2,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+38:P0040,38,3,P0040,18,2,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+38:P0041,38,3,P0041,18,2,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+38:P0042,38,3,P0042,18,2,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+38:P0043,38,3,P0043,18,2,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+38:P0044,38,3,P0044,18,2,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+38:P0045,38,3,P0045,18,2,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+38:P0046,38,3,P0046,18,2,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+38:P0047,38,3,P0047,18,2,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+38:P0048,38,3,P0048,18,2,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+38:P0049,38,3,P0049,18,2,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+38:P0050,38,3,P0050,18,2,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+38:P0051,38,3,P0051,18,2,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+38:P0052,38,3,P0052,18,2,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+38:P0053,38,3,P0053,18,2,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+39:P0054,39,4,P0054,17,2,True,True,,False,True,4,ADD:P0054@nT=25; REMOVE:P0070@nT=25; REMOVE:P0054@nT=39; ADD:P0070@nT=39,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+39:P0055,39,4,P0055,17,2,True,True,,False,True,4,ADD:P0055@nT=32; REMOVE:P0060@nT=32; REMOVE:P0055@nT=39; ADD:P0060@nT=39,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+39:P0056,39,4,P0056,17,2,True,True,,False,True,4,ADD:P0056@nT=4; REMOVE:P0067@nT=4; REMOVE:P0056@nT=39; ADD:P0067@nT=39,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+39:P0057,39,4,P0057,17,2,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+39:P0058,39,4,P0058,17,2,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+39:P0059,39,4,P0059,17,2,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+39:P0060,39,4,P0060,17,2,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+39:P0061,39,4,P0061,17,2,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+39:P0062,39,4,P0062,17,2,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+39:P0063,39,4,P0063,17,2,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+39:P0064,39,4,P0064,17,2,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+39:P0065,39,4,P0065,17,2,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+39:P0066,39,4,P0066,17,2,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+39:P0067,39,4,P0067,17,2,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+39:P0068,39,4,P0068,17,2,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+39:P0069,39,4,P0069,17,2,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+39:P0070,39,4,P0070,17,2,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+40:P0071,40,5,P0071,18,2,True,True,,True,True,4,ADD:P0071@nT=26; REMOVE:P0075@nT=26; REMOVE:P0071@nT=40; ADD:P0075@nT=40,True,False,,False,,,H24_REOPTIMIZATION_WITHIN_GROUP
+40:P0072,40,5,P0072,18,2,True,True,,True,True,4,ADD:P0072@nT=5; REMOVE:P0077@nT=5; REMOVE:P0072@nT=40; ADD:P0077@nT=40,True,False,,False,,,H24_REOPTIMIZATION_WITHIN_GROUP
+40:P0073,40,5,P0073,18,2,True,True,,True,True,4,ADD:P0073@nT=33; REMOVE:P0086@nT=33; REMOVE:P0073@nT=40; ADD:P0086@nT=40,True,False,,False,,,H24_REOPTIMIZATION_WITHIN_GROUP
+40:P0074,40,5,P0074,18,2,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+40:P0075,40,5,P0075,18,2,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+40:P0076,40,5,P0076,18,2,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+40:P0077,40,5,P0077,18,2,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+40:P0078,40,5,P0078,18,2,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+40:P0079,40,5,P0079,18,2,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+40:P0080,40,5,P0080,18,2,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+40:P0081,40,5,P0081,18,2,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+40:P0082,40,5,P0082,18,2,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+40:P0083,40,5,P0083,18,2,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+40:P0084,40,5,P0084,18,2,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+40:P0085,40,5,P0085,18,2,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+40:P0086,40,5,P0086,18,2,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+40:P0087,40,5,P0087,18,2,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+40:P0088,40,5,P0088,18,2,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+41:P0089,41,6,P0089,18,2,True,True,,True,True,4,ADD:P0089@nT=20; REMOVE:P0095@nT=20; REMOVE:P0089@nT=41; ADD:P0095@nT=41,True,False,,False,,,H24_REOPTIMIZATION_WITHIN_GROUP
+41:P0090,41,6,P0090,18,2,True,True,,True,True,4,ADD:P0090@nT=13; REMOVE:P0096@nT=13; REMOVE:P0090@nT=41; ADD:P0096@nT=41,True,False,,False,,,H24_REOPTIMIZATION_WITHIN_GROUP
+41:P0091,41,6,P0091,18,2,True,True,,True,True,4,ADD:P0091@nT=34; REMOVE:P0093@nT=34; REMOVE:P0091@nT=41; ADD:P0093@nT=41,True,False,,False,,,H24_REOPTIMIZATION_WITHIN_GROUP
+41:P0092,41,6,P0092,18,2,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+41:P0093,41,6,P0093,18,2,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+41:P0094,41,6,P0094,18,2,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+41:P0095,41,6,P0095,18,2,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+41:P0096,41,6,P0096,18,2,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+41:P0097,41,6,P0097,18,2,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+41:P0098,41,6,P0098,18,2,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+41:P0099,41,6,P0099,18,2,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+41:P0100,41,6,P0100,18,2,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+41:P0101,41,6,P0101,18,2,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+41:P0102,41,6,P0102,18,2,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+41:P0103,41,6,P0103,18,2,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+41:P0104,41,6,P0104,18,2,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+41:P0105,41,6,P0105,18,2,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+41:P0106,41,6,P0106,18,2,True,False,,True,True,0,,True,False,,False,,,SPARE_CAPACITY_ABSORBS_ABSENCE
+42:P0107,42,7,P0107,17,2,True,True,,False,True,4,ADD:P0107@nT=14; REMOVE:P0114@nT=14; REMOVE:P0107@nT=42; ADD:P0114@nT=42,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+42:P0108,42,7,P0108,17,2,True,True,,False,True,4,ADD:P0108@nT=7; REMOVE:P0110@nT=7; REMOVE:P0108@nT=42; ADD:P0110@nT=42,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+42:P0109,42,7,P0109,17,2,True,True,,False,True,4,ADD:P0109@nT=7; REMOVE:P0110@nT=7; REMOVE:P0109@nT=42; ADD:P0110@nT=42,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+42:P0110,42,7,P0110,17,2,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+42:P0111,42,7,P0111,17,2,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+42:P0112,42,7,P0112,17,2,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+42:P0113,42,7,P0113,17,2,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+42:P0114,42,7,P0114,17,2,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+42:P0115,42,7,P0115,17,2,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+42:P0116,42,7,P0116,17,2,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+42:P0117,42,7,P0117,17,2,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+42:P0118,42,7,P0118,17,2,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+42:P0119,42,7,P0119,17,2,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+42:P0120,42,7,P0120,17,2,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+42:P0121,42,7,P0121,17,2,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+42:P0122,42,7,P0122,17,2,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED
+42:P0123,42,7,P0123,17,2,True,False,,False,True,0,,False,True,,False,,weekly staffing floor,MANUAL_CROSS_GROUP_DECISION_REQUIRED

@@ -1,0 +1,8 @@
+rotation_group,group_size,tested_scenarios,scheduled_active_absences,recoverable_within_group,historical_candidates_requiring_approval,manual_without_candidate,total_requiring_human_intervention
+1,17,102,102,0,0,102,102
+2,18,108,104,104,0,0,0
+3,18,108,104,104,0,0,0
+4,17,102,102,0,0,102,102
+5,18,108,108,108,0,0,0
+6,18,108,108,108,0,0,0
+7,17,102,102,0,17,85,102

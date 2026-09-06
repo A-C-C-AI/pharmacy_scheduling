@@ -1,0 +1,337 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "id": "title-01-01",
+   "metadata": {},
+   "source": [
+    "## 1. Load and validate the canonical historical schedule\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "7e25ee5d",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2026-09-02T11:43:47.843223Z",
+     "iopub.status.busy": "2026-09-02T11:43:47.842975Z",
+     "iopub.status.idle": "2026-09-02T11:43:48.772275Z",
+     "shell.execute_reply": "2026-09-02T11:43:48.771482Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "import sys\n",
+    "from pathlib import Path\n",
+    "import hashlib\n",
+    "import json\n",
+    "\n",
+    "import matplotlib.pyplot as plt\n",
+    "import numpy as np\n",
+    "import pandas as pd\n",
+    "\n",
+    "sys.path.insert(0, \"..\")  \n",
+    "from common_metrics import require, fairness_metrics, gini\n",
+    "\n",
+    "DATA_DIR = Path(\"output\")  \n",
+    "\n",
+    "\n",
+    "def resolve_canonical():\n",
+    "    for candidate in [DATA_DIR / \"canonical_schedule.csv\", Path(\"canonical_schedule.csv\")]:\n",
+    "        if candidate.is_file():\n",
+    "            return candidate\n",
+    "    raise FileNotFoundError(\"Could not find canonical_schedule.csv. Run notebook 00 first.\")\n",
+    "\n",
+    "\n",
+    "canonical_path = resolve_canonical()\n",
+    "canonical_sha256 = hashlib.sha256(canonical_path.read_bytes()).hexdigest()\n",
+    "schedule = pd.read_csv(canonical_path)\n",
+    "\n",
+    "required_columns = {\n",
+    "    \"source_row\", \"week_id\", \"week_start\", \"week_end\", \"nT\", \"rotation_group\",\n",
+    "    \"rotation_round\", \"pharmacy_id\", \"location_id\", \"shift_type\", \"access_mode\",\n",
+    "}\n",
+    "require(required_columns.issubset(schedule.columns), \"Canonical schema is incomplete.\")\n",
+    "schedule[\"week_start\"] = pd.to_datetime(schedule[\"week_start\"], errors=\"raise\")\n",
+    "schedule[\"week_end\"] = pd.to_datetime(schedule[\"week_end\"], errors=\"raise\")\n",
+    "for column in [\"source_row\", \"nT\", \"rotation_group\", \"rotation_round\"]:\n",
+    "    schedule[column] = pd.to_numeric(schedule[column], errors=\"raise\").astype(int)\n",
+    "require(schedule[\"shift_type\"].isin([\"H24\", \"STANDARD\"]).all(), \"Invalid shift type.\")\n",
+    "require(schedule[\"access_mode\"].isin([\"P\", \"C\"]).all(), \"Invalid access mode.\")\n",
+    "\n",
+    "week_fields = [\"week_start\", \"week_end\", \"nT\", \"rotation_group\", \"rotation_round\"]\n",
+    "require((schedule.groupby(\"week_id\")[week_fields].nunique() == 1).all().all(), \"Inconsistent week fields.\")\n",
+    "weeks = schedule[[\"week_id\"] + week_fields].drop_duplicates().sort_values(\"week_start\").reset_index(drop=True)\n",
+    "weeks[\"week_order\"] = np.arange(1, len(weeks) + 1)\n",
+    "\n",
+    "pd.set_option(\"display.max_columns\", 30)\n",
+    "pd.set_option(\"display.width\", 150)\n",
+    "print(\"Loaded:\", canonical_path.name)\n",
+    "print(\"Assignments / weeks / rotating pharmacies:\", len(schedule), len(weeks), schedule[\"pharmacy_id\"].nunique())\n",
+    "\n",
+    "from validation import verify_stage, validate_schedule\n",
+    "for upstream in range(1):\n",
+    "    verify_stage(upstream)\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "title-01-02",
+   "metadata": {},
+   "source": [
+    "## 2. Weekly structure and repeating patterns\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "aa11fcec",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2026-09-02T11:43:48.774661Z",
+     "iopub.status.busy": "2026-09-02T11:43:48.774428Z",
+     "iopub.status.idle": "2026-09-02T11:43:48.813454Z",
+     "shell.execute_reply": "2026-09-02T11:43:48.812485Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "week_index = pd.Index(weeks[\"week_id\"])\n",
+    "weekly_total = schedule.groupby(\"week_id\").size().reindex(week_index, fill_value=0)\n",
+    "weekly_h24 = schedule.loc[schedule[\"shift_type\"].eq(\"H24\")].groupby(\"week_id\").size().reindex(week_index, fill_value=0)\n",
+    "\n",
+    "\n",
+    "\n",
+    "\n",
+    "signatures = {\n",
+    "    week_id: set(zip(group[\"pharmacy_id\"], group[\"location_id\"], group[\"shift_type\"], group[\"access_mode\"]))\n",
+    "    for week_id, group in schedule.groupby(\"week_id\")\n",
+    "}\n",
+    "repeat_rows = []\n",
+    "for nt_value, nt_weeks in weeks.groupby(\"nT\"):\n",
+    "    if len(nt_weeks) > 1:\n",
+    "        ids = nt_weeks[\"week_id\"].tolist()\n",
+    "        for comparison_week in ids[1:]:\n",
+    "            repeat_rows.append((int(nt_value), ids[0], comparison_week, signatures[ids[0]] == signatures[comparison_week]))\n",
+    "repeat_check = pd.DataFrame(repeat_rows, columns=[\"nT\", \"reference_week\", \"comparison_week\", \"exact_match\"])\n",
+    "repeated_pairs = int(len(repeat_check))\n",
+    "repeated_matches = int(repeat_check[\"exact_match\"].sum()) if repeated_pairs else 0\n",
+    "\n",
+    "weekly_h24_frequency = {str(int(v)): int(c) for v, c in weekly_h24.value_counts().sort_index().items()}\n",
+    "weekly_total_frequency = {str(int(v)): int(c) for v, c in weekly_total.value_counts().sort_index().items()}\n",
+    "\n",
+    "structural_checks = pd.DataFrame([\n",
+    "    (\"Unique week identifiers\", weeks[\"week_id\"].is_unique, len(weeks)),\n",
+    "    (\"Repeated nT patterns identical\", repeated_matches == repeated_pairs, f\"{repeated_matches}/{repeated_pairs}\"),\n",
+    "    (\"Uniform observed H24 count\", weekly_h24.nunique() == 1, str(weekly_h24_frequency)),\n",
+    "    (\"No duplicate pharmacy-week\", not schedule.duplicated([\"week_id\", \"pharmacy_id\"]).any(), int(schedule.duplicated([\"week_id\", \"pharmacy_id\"]).sum())),\n",
+    "], columns=[\"check\", \"pass\", \"result\"])\n",
+    "structural_checks[\"status\"] = np.where(structural_checks[\"pass\"], \"PASS\", \"REVIEW\")\n",
+    "display(structural_checks[[\"check\", \"status\", \"result\"]])\n",
+    "\n",
+    "require(structural_checks[\"pass\"].all(), \"Historical structural checks failed.\")\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "title-01-03",
+   "metadata": {},
+   "source": [
+    "## 3. Historical fairness (descriptive, not yet a constraint)\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "37ab8d9a",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2026-09-02T11:43:48.815771Z",
+     "iopub.status.busy": "2026-09-02T11:43:48.815514Z",
+     "iopub.status.idle": "2026-09-02T11:43:49.071799Z",
+     "shell.execute_reply": "2026-09-02T11:43:49.070663Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "pharmacy_ids = pd.Index(sorted(schedule[\"pharmacy_id\"].unique()), name=\"pharmacy_id\")\n",
+    "pharmacy_profile = pd.DataFrame(index=pharmacy_ids)\n",
+    "pharmacy_profile[\"total_shifts\"] = schedule.groupby(\"pharmacy_id\").size().reindex(pharmacy_ids, fill_value=0)\n",
+    "pharmacy_profile[\"standard_shifts\"] = schedule.loc[schedule[\"shift_type\"].eq(\"STANDARD\")].groupby(\"pharmacy_id\").size().reindex(pharmacy_ids, fill_value=0)\n",
+    "pharmacy_profile[\"h24_shifts\"] = schedule.loc[schedule[\"shift_type\"].eq(\"H24\")].groupby(\"pharmacy_id\").size().reindex(pharmacy_ids, fill_value=0)\n",
+    "\n",
+    "\n",
+    "\n",
+    "metrics = pd.DataFrame({\n",
+    "    \"Total\": fairness_metrics(pharmacy_profile[\"total_shifts\"]),\n",
+    "    \"STANDARD\": fairness_metrics(pharmacy_profile[\"standard_shifts\"]),\n",
+    "    \"H24\": fairness_metrics(pharmacy_profile[\"h24_shifts\"]),\n",
+    "}).T\n",
+    "display(metrics.round(4))\n",
+    "\n",
+    "fig, axes = plt.subplots(1, 2, figsize=(8.5, 3.2))\n",
+    "for axis, column, title in [(axes[0], \"total_shifts\", \"Total shifts\"), (axes[1], \"h24_shifts\", \"H24 shifts\")]:\n",
+    "    counts = pharmacy_profile[column].value_counts().sort_index()\n",
+    "    axis.bar(counts.index.astype(str), counts.values)\n",
+    "    axis.set_title(title)\n",
+    "    axis.set_xlabel(\"Assignments per pharmacy\")\n",
+    "    axis.set_ylabel(\"Pharmacies\")\n",
+    "    axis.spines[[\"top\", \"right\"]].set_visible(False)\n",
+    "fig.tight_layout()\n",
+    "plt.show()\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "title-01-04",
+   "metadata": {},
+   "source": [
+    "## 4. Groups and P/C consistency\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "5ca6d5b7",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2026-09-02T11:43:49.074299Z",
+     "iopub.status.busy": "2026-09-02T11:43:49.074003Z",
+     "iopub.status.idle": "2026-09-02T11:43:49.107165Z",
+     "shell.execute_reply": "2026-09-02T11:43:49.106280Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "access_by_pharmacy = schedule.groupby(\"pharmacy_id\")[\"access_mode\"].first()\n",
+    "access_summary = access_by_pharmacy.value_counts().rename(\"pharmacies\").to_frame()\n",
+    "access_summary[\"meaning\"] = access_summary.index.map({\"P\": \"open-door\", \"C\": \"call/closed-door\"})\n",
+    "access_mode_changes = int(schedule.groupby(\"pharmacy_id\")[\"access_mode\"].nunique().gt(1).sum())\n",
+    "display(access_summary)\n",
+    "\n",
+    "group_by_nt = weeks.groupby(\"nT\")[\"rotation_group\"].first().astype(int).to_dict()\n",
+    "rotation_groups = sorted(set(group_by_nt.values()))\n",
+    "\n",
+    "\n",
+    "\n",
+    "\n",
+    "group_frequency = schedule.groupby([\"pharmacy_id\", \"rotation_group\"]).size().rename(\"assignments\").reset_index()\n",
+    "primary_group = (\n",
+    "    group_frequency.sort_values([\"pharmacy_id\", \"assignments\", \"rotation_group\"], ascending=[True, False, True])\n",
+    "    .drop_duplicates(\"pharmacy_id\").set_index(\"pharmacy_id\")[\"rotation_group\"].astype(int)\n",
+    ")\n",
+    "group_sizes = primary_group.value_counts().sort_index().rename(\"pharmacies\").to_frame()\n",
+    "display(group_sizes)\n",
+    "\n",
+    "\n",
+    "\n",
+    "assigned_primary_group = schedule[\"pharmacy_id\"].map(primary_group)\n",
+    "group_violations = schedule.loc[\n",
+    "    assigned_primary_group.ne(schedule[\"rotation_group\"]),\n",
+    "    [\"week_id\", \"nT\", \"rotation_group\", \"pharmacy_id\", \"shift_type\"],\n",
+    "]\n",
+    "display(group_violations)\n",
+    "print(\"Rotation groups:\", len(rotation_groups))\n",
+    "print(\"Pharmacies with any historical cross-group row:\", group_violations[\"pharmacy_id\"].nunique())\n",
+    "print(\"(carried into notebook 02 as candidates for secondary-group eligibility)\")\n",
+    "\n",
+    "require(access_mode_changes == 0, \"Time-varying access mode requires explicit modeling.\")\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "title-01-05",
+   "metadata": {},
+   "source": [
+    "## 5. Export baseline evidence for notebook 02\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "43291683",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2026-09-02T11:43:49.110044Z",
+     "iopub.status.busy": "2026-09-02T11:43:49.109622Z",
+     "iopub.status.idle": "2026-09-02T11:43:49.131735Z",
+     "shell.execute_reply": "2026-09-02T11:43:49.130458Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "maximum_historical_workload = int(pharmacy_profile[\"total_shifts\"].max())\n",
+    "\n",
+    "evidence = pd.DataFrame([\n",
+    "    (\"Calendar weeks\", len(weeks), \"OBSERVED\"),\n",
+    "    (\"Maximum historical assignments\", maximum_historical_workload, \"OBSERVED (single-year sample, see section 5)\"),\n",
+    "    (\"Uniform rotating H24 per week\", int(weekly_h24.iloc[0]) if weekly_h24.nunique() == 1 else None, \"OBSERVED\"),\n",
+    "    (\"Same schedule for equal nT\", f\"{repeated_matches}/{repeated_pairs}\", \"OBSERVED\"),\n",
+    "    (\"Rotation groups\", len(rotation_groups), \"OBSERVED\"),\n",
+    "    (\"P/C changes\", access_mode_changes, \"OBSERVED DATA CONSISTENCY\"),\n",
+    "    (\"Weekly rotating staff\", f\"{weekly_total.min()}..{weekly_total.max()}\", \"OBSERVED STAFFING; NOT GEOGRAPHIC COVERAGE\"),\n",
+    "    (\"Historical cross-group rows\", int(group_violations.shape[0]), \"OBSERVED EXCEPTION -> secondary-eligibility candidates in NB02\"),\n",
+    "    (\"Geographic coverage\", \"not evaluated\", \"OUT OF SCOPE\"),\n",
+    "], columns=[\"property\", \"evidence\", \"classification\"])\n",
+    "display(evidence)\n",
+    "\n",
+    "baseline_evidence = {\n",
+    "    \"evidence_type\": \"baseline_derived_from_canonical_schedule\",\n",
+    "    \"canonical_file\": canonical_path.name,\n",
+    "    \"canonical_sha256\": canonical_sha256,\n",
+    "    \"derived_values\": {\n",
+    "        \"assignments\": int(len(schedule)),\n",
+    "        \"horizon_weeks\": int(len(weeks)),\n",
+    "        \"rotation_groups\": [int(g) for g in rotation_groups],\n",
+    "        \"group_by_nt\": {str(int(nt)): int(g) for nt, g in group_by_nt.items()},\n",
+    "        \"primary_group_by_pharmacy\": {p: int(g) for p, g in primary_group.items()},\n",
+    "        \"group_sizes\": {str(int(g)): int(s) for g, s in group_sizes[\"pharmacies\"].items()},\n",
+    "        \"weekly_staffing_min\": int(weekly_total.min()),\n",
+    "        \"weekly_staffing_max\": int(weekly_total.max()),\n",
+    "        \"weekly_h24_uniform\": bool(weekly_h24.nunique() == 1),\n",
+    "        \"weekly_h24_value\": int(weekly_h24.iloc[0]) if weekly_h24.nunique() == 1 else None,\n",
+    "        \"maximum_annual_workload\": maximum_historical_workload,\n",
+    "        \"repeated_nt_matches\": repeated_matches,\n",
+    "        \"repeated_nt_pairs\": repeated_pairs,\n",
+    "        \"access_mode_changes\": access_mode_changes,\n",
+    "        \"cross_group_rows\": int(group_violations.shape[0]),\n",
+    "        \"cross_group_pharmacies\": group_violations[\"pharmacy_id\"].unique().tolist(),\n",
+    "        \"single_year_sample_caveat\": (\n",
+    "            \"All parameters are derived from one 53-week cycle; no other year is available \"\n",
+    "            \"to test temporal stability. Treat as a working baseline, not a validated norm.\"\n",
+    "        ),\n",
+    "    },\n",
+    "}\n",
+    "\n",
+    "Path(\"output/baseline_evidence.json\").write_text(json.dumps(baseline_evidence, ensure_ascii=False, indent=2), encoding=\"utf-8\")\n",
+    "evidence.to_csv(\"output/baseline_evidence.csv\", index=False)\n",
+    "pharmacy_profile.reset_index().to_csv(\"output/baseline_pharmacy_profile.csv\", index=False)\n",
+    "print(\"Saved: output/baseline_evidence.json, baseline_evidence.csv, baseline_pharmacy_profile.csv\")\n",
+    "\n",
+    "from validation import write_stage\n",
+    "write_stage(1, ['output/stage_00_manifest.json'], ['output/baseline_evidence.json', 'output/baseline_evidence.csv', 'output/baseline_pharmacy_profile.csv'])\n"
+   ]
+  }
+ ],
+ "metadata": {
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.14.2"
+  },
+  "review_execution": {
+   "method": "IPython in-process; isolated process per notebook",
+   "python": "3.12.13"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}

@@ -1,0 +1,5 @@
+scenario,assignments,reduction_vs_history,total_min,total_max,total_range,total_jain,total_gini,h24_min,h24_max,h24_range,h24_jain,h24_gini,active_calendar_decision_changes,h24_calendar_decision_changes,pareto_efficient,recommended
+Fairness-aware,923,8,7,8,1,0.995580283530304,0.0333130741924971,1,2,1,0.8897687678175483,0.160147261849977,10,6,True,True
+Full-group,931,0,7,8,1,0.9957379395752416,0.0323980683415856,1,2,1,0.8897687678175483,0.160147261849977,2,6,False,False
+Historical,931,0,6,8,2,0.995456617936712,0.0333062621711073,0,3,3,0.8672429762272307,0.1761006289308175,0,0,False,False
+Efficiency-first,901,30,5,8,3,0.9884690924189458,0.0540501520442509,1,2,1,0.8897687678175483,0.160147261849977,32,6,True,False
